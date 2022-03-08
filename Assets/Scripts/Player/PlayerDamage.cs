@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroy : MonoBehaviour
+public class PlayerDamage : DamageModel
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    public override void OnHullDestroyed()
     {
         GameManager.GetManager().GameOver();
     }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
+    [Range(1000f, 4000f)]
+    public float angleSpeed;
     [Range(10f, 2000f)]
-    public float angleSpeed = 1000;
-    [Range(10f, 2000f)]
-    public float dirSpeed = 1000;
+    public float dirSpeed;
     Rigidbody2D body;
     // Start is called before the first frame update
     void Start()
