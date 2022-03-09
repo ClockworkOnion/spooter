@@ -1,0 +1,13 @@
+# Blender MTL File: 'enemy_ship.blend'
+# Material Count: 1
+
+newmtl enemy_material
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 1
+map_Kd \\\\192.168.178.126\\share\\Unity\\BlenderStuff\\Textures\\blueMetal_Rusty.png
