@@ -8,9 +8,6 @@ public class Crosshair : MonoBehaviour
     private Plane board;
     private Vector3 gunsTarget;
 
-    [Range(0.0f, 360.0f)]
-    public float firingAngle = 90;
-    public GameObject projectileType; // The gameobject/prefab that will be shot by this cannon
 
     void Start()
     {
@@ -20,12 +17,7 @@ public class Crosshair : MonoBehaviour
     void Update()
     {
         gunsTarget = GetCrosshairTarget();
-
-        if (Input.GetMouseButton(0))
-        {
-            
         }
-    }
 
     Vector3 GetCrosshairTarget()
     {
