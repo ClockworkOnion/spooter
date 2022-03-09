@@ -29,6 +29,12 @@ public abstract class DamageModel : MonoBehaviour
         return shield[(int)direction];
     }
 
+    public float[] Shields(float[] shields)
+    {
+        Array.Copy(shield, shields, 4);
+        return shields;
+    }
+
     public void Start()
     {
         hull = maxHull;
