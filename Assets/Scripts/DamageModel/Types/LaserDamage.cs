@@ -6,11 +6,20 @@ public class LaserDamage : DirectionalDamage
 {
     [Range(1f, 1000f)]
     public float damage = 10;
+    Collider2D ship;
     bool leftShip = false;
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        leftShip = true;
+        if(ship == null)
+        {
+            ship = collision;
+        } else if(ship != collision)
+        {
+            ship = null;
+            leftShip = true;
+        }
+        
     }
 
     public override float GetTriggerDamage(Collider2D collider, Collider2D other)

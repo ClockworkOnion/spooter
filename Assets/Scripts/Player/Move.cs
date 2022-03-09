@@ -5,9 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Move : MonoBehaviour
 {
-    [Range(1000f, 4000f)]
+    [Range(1f, 10f)]
     public float angleSpeed;
-    [Range(10f, 2000f)]
+    [Range(1f, 100f)]
     public float dirSpeed;
     Rigidbody2D body;
     // Start is called before the first frame update
@@ -19,7 +19,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        body.AddForce(transform.up * Time.fixedDeltaTime * Input.GetAxisRaw("Vertical") * dirSpeed);
+        body.AddForce(dirSpeed * Time.fixedDeltaTime * Input.GetAxisRaw("Vertical") * transform.up);
         body.AddTorque(angleSpeed * Time.fixedDeltaTime * -Input.GetAxisRaw("Horizontal"));
     }
 }

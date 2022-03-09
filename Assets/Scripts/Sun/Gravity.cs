@@ -10,8 +10,11 @@ public class Gravity : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        collision.attachedRigidbody.AddForce((transform.position - collision.transform.position).normalized 
-            *(Time.fixedDeltaTime * mass * collision.attachedRigidbody.mass 
-            / Vector3.Distance(transform.position, collision.transform.position)));
+        if (collision.attachedRigidbody != null)
+        {
+            collision.attachedRigidbody.AddForce((transform.position - collision.transform.position).normalized
+                * (Time.fixedDeltaTime * mass * collision.attachedRigidbody.mass
+                / Vector3.Distance(transform.position, collision.transform.position)));
+        }
     }
 }
