@@ -6,6 +6,8 @@ public class LaserProjectile : MonoBehaviour
 {
     public float flightSpeed = 3.0f;
     private float lifeSpan = 10.0f;
+    public AudioSource audio;
+
     void Start()
     {
         

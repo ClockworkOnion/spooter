@@ -7,12 +7,16 @@ public class ShipCannon : MonoBehaviour
     [Range(0.0f, 360.0f)]
     public float maxFiringAngle = 90;
     public GameObject projectileType; // The gameobject/prefab that will be shot by this cannon
+    private AudioSource audio;
+    public AudioClip laserSound;
 
     private Crosshair crosshair;
 
     void Start()
     {
         crosshair = GameObject.Find("Crosshair").GetComponent<Crosshair>();
+        audio = GetComponent<AudioSource>();
+        
     }
 
     void Update()
@@ -26,6 +30,7 @@ public class ShipCannon : MonoBehaviour
             if (firingAngle < maxFiringAngle)
             {
                 LaserProjectile laser = Instantiate(projectileType, transform.position, rotationToCrosshair).GetComponent<LaserProjectile>();
+                audio.PlayOneShot(laserSound);
             }
         }
     }
