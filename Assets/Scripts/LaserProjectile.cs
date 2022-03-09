@@ -13,7 +13,7 @@ public class LaserProjectile : MonoBehaviour
 
     void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * flightSpeed;
+        transform.position += transform.up * Time.deltaTime * flightSpeed;
 
         lifeSpan -= Time.deltaTime;
         if (lifeSpan < 0) { GameObject.Destroy(this.gameObject); }

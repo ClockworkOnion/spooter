@@ -19,7 +19,7 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        body.AddForce(transform.up * Time.deltaTime * Input.GetAxisRaw("Vertical") * dirSpeed);
-        body.AddTorque(angleSpeed * Time.deltaTime * -Input.GetAxisRaw("Horizontal"));
+        body.AddForce(transform.up * Time.fixedDeltaTime * Input.GetAxisRaw("Vertical") * dirSpeed);
+        body.AddTorque(angleSpeed * Time.fixedDeltaTime * -Input.GetAxisRaw("Horizontal"));
     }
 }

@@ -9,14 +9,25 @@ public enum DamageDirection
 
 }
 
-[RequireComponent(typeof(Collider2D))]
-[RequireComponent(typeof(Rigidbody2D))]
 public abstract class DamageModel : MonoBehaviour
 {
+    [Range(0f, 1000f)]
     public float maxHull = 100;
+    [Range(0f, 1000f)]
     public float[] maxShield = new float[4];
-    public float[] shield = new float[4];
-    public float hull;
+
+    float[] shield = new float[4];
+    float hull;
+
+    public float Hull
+    {
+        get => hull;
+    }
+
+    public float Shield(DamageDirection direction)
+    {
+        return shield[(int)direction];
+    }
 
     public void Start()
     {
@@ -62,11 +73,5 @@ public abstract class DamageModel : MonoBehaviour
             angle < 45 ? DamageDirection.Front :
             angle < 135 ? DamageDirection.Left :
             DamageDirection.Back;
-    }
-
-    public static DamageDirection AttackDirection(Transform attacked, Transform attacker)
-    {
-        return AngleToDirection(Vector2.SignedAngle(attacked.up,
-                attacker.position - attacked.position));
     }
 }

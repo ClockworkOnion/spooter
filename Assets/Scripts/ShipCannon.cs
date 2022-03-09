@@ -20,9 +20,9 @@ public class ShipCannon : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Vector3 directionToCrosshair = (crosshair.transform.position - transform.position).normalized;
-            Quaternion rotationToCrosshair = Quaternion.LookRotation(directionToCrosshair);
-            float firingAngle = Vector3.Angle(directionToCrosshair, transform.up);
-            if (firingAngle < maxFiringAngle)
+            float firingAngle = -Vector3.SignedAngle(directionToCrosshair, transform.up, Vector3.forward);
+            Quaternion rotationToCrosshair = Quaternion.Euler(0, 0, firingAngle);
+            if (Mathf.Abs(firingAngle) < maxFiringAngle)
             {
                 LaserProjectile laser = Instantiate(projectileType, transform.position, rotationToCrosshair).GetComponent<LaserProjectile>();
             }

@@ -12,7 +12,8 @@ public class DirectionalAreaDamage : MonoBehaviour
         if(collision.TryGetComponent(out DamageModel model))
         {
             model.Damage(maxDps * Time.deltaTime ,
-                DamageModel.AttackDirection(collision.transform, transform));
+                DamageModel.AngleToDirection(Vector2.SignedAngle(collision.transform.up,
+                transform.position - collision.transform.position)));
         }
         
     }

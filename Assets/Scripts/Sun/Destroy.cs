@@ -7,7 +7,6 @@ public class Destroy : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        DamageModel model;
-        if (collision.TryGetComponent(out model)) model.OnHullDestroyed();
+        if (collision.TryGetComponent(out DamageModel model)) model.OnHullDestroyed();
     }
 }
