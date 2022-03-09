@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1768084374954124912}
   - component: {fileID: 1768084374954124925}
   - component: {fileID: 1768084374954124924}
+  - component: {fileID: 771682455}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -92,8 +93,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.5
+  m_AngularDrag: 2
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -112,6 +113,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e76ea0eb28933f41aea51c846dd9c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &771682455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768084374954124913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a6815a244641747b0f5d718357d736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnSpeed: 4000
+  TOP_SPEED: 2
+  currentSpeed: 0
 --- !u!1001 &1768084376787872672
 PrefabInstance:
   m_ObjectHideFlags: 0
