@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class Gravity : MonoBehaviour
 {
 
-    public float mass = 100;
+    public float mass = 1000;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         collision.attachedRigidbody.AddForce((transform.position - collision.transform.position).normalized 
-            * mass * collision.attachedRigidbody.mass 
-            / Vector3.Distance(transform.position, collision.transform.position));
+            *(Time.fixedDeltaTime * mass * collision.attachedRigidbody.mass 
+            / Vector3.Distance(transform.position, collision.transform.position)));
     }
 }

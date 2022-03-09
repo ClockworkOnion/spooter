@@ -8,13 +8,15 @@ public enum DamageDirection
     Front,Right,Back,Left
 
 }
+
+[RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Rigidbody2D))]
 public abstract class DamageModel : MonoBehaviour
 {
     public float maxHull = 100;
     public float[] maxShield = new float[4];
     public float[] shield = new float[4];
     public float hull;
-    public Action test;
 
     public void Start()
     {
