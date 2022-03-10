@@ -15,32 +15,36 @@ public class HealthAndShieldUI : MonoBehaviour
 
     public GameObject player;
     public DamageModel damageModel;
+    public ShipSystems shipSystems;
+
+    private Text energyPoolText;
 
 
     void Start()
     {
         player = GameObject.Find("Player");
         damageModel = player.GetComponent<DamageModel>();
+        shipSystems = player.GetComponent<ShipSystems>();
+        energyPoolText = GameObject.Find("EnergyPool").GetComponent<Text>();
     }
 
  
     void Update()
     {
+        energyPoolText.text = "E: " + shipSystems.Energy.ToString("0");
         healthPointsText.text = "HP: " + damageModel.Hull.ToString("0");
-
-        damageModel.Shields(shieldsPoints);
-
-        setColorOfHPAndShieldTexts();
         
+        damageModel.Shields(shieldsPoints);
+        setColors();
     }
 
-    void setColorOfHPAndShieldTexts()
+    void setColors()
     {
         if (damageModel.Hull >= 2/3 * damageModel.maxHull)
         {
             healthPointsText.color = Color.green;
         }
-        else if (damageModel.Hull >= 1/3 * damageModel.maxHull)
+        else if (damageModel.Hull >= 1 / 3 * damageModel.maxHull)
         {
             healthPointsText.color = Color.yellow;
         }
@@ -67,5 +71,19 @@ public class HealthAndShieldUI : MonoBehaviour
             }
 
         }
+
+        if (shipSystems.Energy >= 2 / 3 * shipSystems.maxEnergyPool)
+        {
+            energyPoolText.color = Color.green;
+        }
+        else if (shipSystems.Energy >= 1 / 3 * shipSystems.maxEnergyPool)
+        {
+            energyPoolText.color = Color.yellow;
+        }
+        else
+        {
+            energyPoolText.color = Color.red;
+        }
+
     }
 }
