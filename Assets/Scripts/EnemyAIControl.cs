@@ -16,6 +16,7 @@ public class EnemyAIControl : MonoBehaviour
     private float angleToGoal = 0;
     Rigidbody2D rb;
     public float turnSpeed = 800;
+    public float thrustStrength = 12f;
     public float TOP_SPEED = 2;
     int goalIndex = 0;
     Vector3 movementGoal;
@@ -61,7 +62,7 @@ public class EnemyAIControl : MonoBehaviour
 
         if (currentSpeed < TOP_SPEED)
         {
-            rb.AddForce(transform.up * Time.fixedDeltaTime * 1200);
+            rb.AddForce(transform.up * Time.fixedDeltaTime * thrustStrength);
         }
 
         currentSpeed = (lastPosition - transform.position).magnitude;
