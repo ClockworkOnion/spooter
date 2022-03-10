@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03591338, g: 0.046737023, b: 0.09852914, a: 1}
+  m_IndirectSpecularColor: {r: 0.06027776, g: 0.06312619, b: 0.11356931, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -285,6 +285,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: maxHull
+      value: 167
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: maxShield.Array.data[0]
+      value: 212
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: maxShield.Array.data[1]
+      value: 210
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: maxShield.Array.data[2]
+      value: 248
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: maxShield.Array.data[3]
+      value: 248
+      objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784922, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: m_RootOrder
       value: 0
