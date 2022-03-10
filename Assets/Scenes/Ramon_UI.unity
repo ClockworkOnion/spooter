@@ -131,20 +131,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: maxHull
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: maxShield.Array.data[0]
-      value: 493
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: maxShield.Array.data[1]
-      value: 507
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: maxShield.Array.data[2]
-      value: 364
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784901, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: maxShield.Array.data[3]
-      value: 858
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784903, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: laserSound
