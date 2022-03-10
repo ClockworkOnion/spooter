@@ -71,6 +71,25 @@ public abstract class DamageModel : MonoBehaviour
     {
         hull = Mathf.Max(hull + amount, maxHull);
     }
+
+    public void RechargeShields(float amount)
+    {
+        int notFull = shield.Length;
+        for (int i = 0; i < shield.Length; i++)
+        {
+            if(shield[i] == maxShield[i])
+            {
+                --notFull;
+            }
+        }
+        for (int i = 0; i < shield.Length; i++)
+        {
+            if (shield[i] != maxShield[i])
+            {
+                shield[i] = Mathf.Max(maxShield[i], shield[i] + amount / notFull);
+            }
+        }
+    }
     
     public static DamageDirection AngleToDirection(float angle)
     {

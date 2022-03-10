@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class LaserCannon : AimedWeapon
 {
-    public int shots = 10;
-    public override bool CanFire()
+
+    protected override bool Powered()
     {
-        return shots-- > 0;
+        return true;
     }
 }
