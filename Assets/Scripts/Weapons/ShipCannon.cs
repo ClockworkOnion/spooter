@@ -29,7 +29,6 @@ public class ShipCannon : MonoBehaviour
             if (firingAngle < maxFiringAngle)
             {
                 LaserProjectile laser = Instantiate(projectileType, transform.position, rotationToCrosshair).GetComponent<LaserProjectile>();
-                audio.PlayOneShot(laserSound);
             }
         }
     }
