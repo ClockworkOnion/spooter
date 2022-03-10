@@ -16,7 +16,6 @@ public class ShipCannon : MonoBehaviour
     {
         crosshair = GameObject.Find("Crosshair").GetComponent<Crosshair>();
         audio = GetComponent<AudioSource>();
-        
     }
 
     void Update()
@@ -30,7 +29,7 @@ public class ShipCannon : MonoBehaviour
             if (firingAngle < maxFiringAngle)
             {
                 LaserProjectile laser = Instantiate(projectileType, transform.position, rotationToCrosshair).GetComponent<LaserProjectile>();
-                // audio.PlayOneShot(laserSound);
+                audio.PlayOneShot(laserSound);
             }
         }
     }

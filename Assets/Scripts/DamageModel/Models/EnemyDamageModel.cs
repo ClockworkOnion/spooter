@@ -8,7 +8,7 @@ public class EnemyDamageModel : DamageModel
 
     public override void OnHullDestroyed()
     {
-        Instantiate(explosion, transform.position, transform.rotation).GetComponent<ParticleSystem>().Play();
+        Destroy(Instantiate(explosion, transform.position, transform.rotation), 2);
         Destroy(gameObject);
     }
 }
