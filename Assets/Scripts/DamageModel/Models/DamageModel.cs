@@ -69,7 +69,7 @@ public abstract class DamageModel : MonoBehaviour
 
     public void RepairHull(float amount)
     {
-        hull = Mathf.Max(hull + amount, maxHull);
+        hull = Mathf.Min(hull + amount, maxHull);
     }
 
     public void RechargeShields(float amount)
@@ -86,7 +86,7 @@ public abstract class DamageModel : MonoBehaviour
         {
             if (shield[i] != maxShield[i])
             {
-                shield[i] = Mathf.Max(maxShield[i], shield[i] + amount / notFull);
+                shield[i] = Mathf.Min(maxShield[i], shield[i] + amount / notFull);
             }
         }
     }

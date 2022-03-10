@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class LaserCannon : AimedWeapon
 {
-
+    [Range(0f, 100f)]
+    public float drain;
     protected override bool Powered()
     {
-        return true;
+        return systems.useEnergy(drain);
     }
 }

@@ -5388,6 +5388,7 @@ GameObject:
   - component: {fileID: 1749021331}
   - component: {fileID: 1749021330}
   - component: {fileID: 1749021332}
+  - component: {fileID: 1749021333}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5560,6 +5561,21 @@ MonoBehaviour:
   laserSound: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
   projectileType: {fileID: 4124514889804667390, guid: a266bd39b81665748aee801f4d4edd8f, type: 3}
   firingAngle: 0
+--- !u!114 &1749021333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1749021323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4558740211e794f8fb7ed577a8bc48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnergyPool: 100
+  energyPool: 100
+  energyRegeneration: 6
 --- !u!1 &1808145615
 GameObject:
   m_ObjectHideFlags: 0

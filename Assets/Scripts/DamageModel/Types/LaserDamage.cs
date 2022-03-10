@@ -11,7 +11,7 @@ public class LaserDamage : DirectionalDamage
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(ship == null)
+        if(ship == null && !leftShip)
         {
             ship = collision;
         } else if(ship != collision)

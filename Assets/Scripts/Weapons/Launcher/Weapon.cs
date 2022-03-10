@@ -19,12 +19,14 @@ public abstract class Weapon : MonoBehaviour
 
     protected Rigidbody2D shipBody;
     protected AudioSource audioSource;
+    protected ShipSystems systems;
     protected float lastShot;
 
     protected virtual void Start()
     {
-        shipBody = GetComponent<Rigidbody2D>();
+        shipBody = GetComponentInParent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+        systems = GetComponentInParent<ShipSystems>();
     }
 
     protected virtual void Update()
