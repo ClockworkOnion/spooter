@@ -292,6 +292,7 @@ GameObject:
   - component: {fileID: 2308675875130784900}
   - component: {fileID: 2308675875130784903}
   - component: {fileID: 1539138991}
+  - component: {fileID: 1849733223}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -391,10 +392,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHull: 100
   maxShield:
-  - 0
-  - 0
-  - 0
-  - 0
+  - 100
+  - 100
+  - 100
+  - 100
 --- !u!114 &2308675875130784900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +519,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1849733223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2308675875130784926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4558740211e794f8fb7ed577a8bc48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEnergyPool: 100
+  energyPool: 100
 --- !u!1001 &2308675874724225264
 PrefabInstance:
   m_ObjectHideFlags: 0
