@@ -9,17 +9,39 @@ public class Move : MonoBehaviour
     public float angleSpeed;
     [Range(1f, 100f)]
     public float dirSpeed;
+    public float thrusterCost = 5f;
+    public float turningCost = 2f;
     Rigidbody2D body;
-    // Start is called before the first frame update
+    ShipSystems systems;
+    [SerializeField]
+    private float verticalThrust;
+    [SerializeField]
+    private float horizontalThrust;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
+        systems = GetComponent<ShipSystems>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetAxisRaw("Vertical") != 0 && systems.useEnergy(thrusterCost*Time.deltaTime))
+        {
+            verticalThrust = Input.GetAxisRaw("Vertical");
+        } else { verticalThrust = 0f;  }
+
+        if (Input.GetAxisRaw("Horizontal") != 0 && systems.useEnergy(turningCost*Time.deltaTime))
+        {
+            horizontalThrust = Input.GetAxisRaw("Horizontal");
+        } else { horizontalThrust = 0f;  }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        body.AddForce(dirSpeed * Time.fixedDeltaTime * Input.GetAxisRaw("Vertical") * transform.up);
-        body.AddTorque(angleSpeed * Time.fixedDeltaTime * -Input.GetAxisRaw("Horizontal"));
+
+        body.AddForce(dirSpeed * Time.fixedDeltaTime * verticalThrust * transform.up);
+        body.AddTorque(angleSpeed * Time.fixedDeltaTime * -horizontalThrust);
     }
 }

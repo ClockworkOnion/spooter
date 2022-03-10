@@ -5,11 +5,14 @@ using UnityEngine;
 public class ShipSystems : MonoBehaviour
 {
     public float maxEnergyPool = 100;
-    public float energyPool = 100;
-    public float energyRegeneration = 6f;
+    [SerializeField]
+    private float energyPool = 100;
+    public float energyRegeneration = 1f;
 
     private AudioSource engineSound;
     private float engineVolume = 0f;
+
+    private ShieldRingDisplay rings;
 
     void Awake()
     {
@@ -18,15 +21,19 @@ public class ShipSystems : MonoBehaviour
 
     void Start()
     {
+        rings = GameObject.Find("BarDisplay").GetComponent<ShieldRingDisplay>();
 
     }
 
     void Update()
     {
+        HandleEngineVolume();
         if (energyPool < maxEnergyPool)
         {
             energyPool += energyRegeneration * Time.deltaTime;
         }
+
+        rings.SetPercentages(energyPool, maxEnergyPool);
     }
 
     public float Energy
