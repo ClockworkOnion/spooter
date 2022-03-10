@@ -18,12 +18,15 @@ public class EnemyAIControl : MonoBehaviour
     public float turnSpeed = 800;
     public float thrustStrength = 12f;
     public float TOP_SPEED = 2;
+    public enemyTypes type = enemyTypes.baseShip;
     int goalIndex = 0;
     Vector3 movementGoal;
     Vector3[] positions = new Vector3[4];
     Vector3 lastPosition;
     [SerializeField]
     float currentSpeed = 0f;
+
+    private LevelManager thisLevel;
 
     private void Awake()
     {
@@ -85,5 +88,19 @@ public class EnemyAIControl : MonoBehaviour
         goalIndex = Random.Range(0, 3);
     }
 
+    public void SetLevelManager(LevelManager l) // Called by LevelManager upon spawning the ship
+    {
+        thisLevel = l;
+    }
 
+    public enum enemyTypes
+    {
+        baseShip,
+        biggerShip
+    }
+
+    private void OnDestroy() // Tell the level manager when this ship was destroyed so it can do other stuff
+    {
+        if (thisLevel != null) thisLevel.OnEnemyDestroyed(this);
+    }
 }
