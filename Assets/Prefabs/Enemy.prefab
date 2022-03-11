@@ -288,6 +288,7 @@ GameObject:
   - component: {fileID: 1768084374954124927}
   - component: {fileID: 1768084374954124912}
   - component: {fileID: 1768084374954124925}
+  - component: {fileID: 558444801107876806}
   - component: {fileID: 1768084374954124924}
   - component: {fileID: 771682455}
   - component: {fileID: 5603820250232720990}
@@ -385,6 +386,28 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &558444801107876806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768084374954124913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7aa310ec596e5842acfd299c3950a5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 6.67
+  weapon: 0
+  refireRate: 0.75
+  speed: 88.9
+  laserSound: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
+  projectileType: {fileID: 4124514889804667390, guid: a266bd39b81665748aee801f4d4edd8f, type: 3}
+  firingAngle:
+  - -124
+  - 100
+  firingDistance: 100
 --- !u!114 &1768084374954124924
 MonoBehaviour:
   m_ObjectHideFlags: 0
