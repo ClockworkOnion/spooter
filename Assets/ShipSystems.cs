@@ -21,8 +21,7 @@ public class ShipSystems : MonoBehaviour
 
     void Start()
     {
-        rings = GameObject.Find("BarDisplay").GetComponent<ShieldRingDisplay>();
-
+        rings = GameObject.Find("EngineRings").GetComponent<ShieldRingDisplay>();
     }
 
     void Update()
@@ -33,7 +32,7 @@ public class ShipSystems : MonoBehaviour
             energyPool += energyRegeneration * Time.deltaTime;
         }
 
-        rings.SetPercentages(energyPool, maxEnergyPool);
+        rings.SetPercentages(energyPool, maxEnergyPool); // For now...
     }
 
     public float Energy

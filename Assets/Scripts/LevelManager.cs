@@ -5,8 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     private List<EnemyAIControl> enemiesInScene = new List<EnemyAIControl>();
-    [SerializeField]
-    private int currentEnemyCount = 0;
+    public int currentEnemyCount = 0;
     public int maxEnemyCount = 3;
     public int enemyReinforcements = 5;
     Transform playerTransform;
@@ -47,10 +46,16 @@ public class LevelManager : MonoBehaviour
         return (number == 1) ? 1 : -1;
     }
 
-    public void OnEnemyDestroyed(EnemyAIControl enm)
+    public void OnEnemyDestroyed(EnemyAIControl enm) // Called by enemies when they are destroyed
     {
         enemiesInScene.Remove(enm);
         currentEnemyCount = enemiesInScene.Count;
+    }
+
+    public void CreateEnemyWave(int maxEnemies, int totalEnemies)
+    {
+        maxEnemyCount = maxEnemies;
+        enemyReinforcements = totalEnemies;
     }
 
 }
