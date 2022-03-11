@@ -31,8 +31,6 @@ public class ShipSystems : MonoBehaviour
         {
             energyPool += energyRegeneration * Time.deltaTime;
         }
-
-        engineRings.SetPercentages(energyPool, maxEnergyPool); // For now...
     }
 
     public float Energy

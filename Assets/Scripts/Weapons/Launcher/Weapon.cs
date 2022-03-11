@@ -25,7 +25,7 @@ public abstract class Weapon : MonoBehaviour
     protected virtual void Start()
     {
         shipBody = GetComponentInParent<Rigidbody2D>();
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponents<AudioSource>()[1];
         systems = GetComponentInParent<ShipSystems>();
     }
 
