@@ -12,21 +12,23 @@ public class WorldBorder : MonoBehaviour
     public float damage;
 
     private float worldSizeHalf;
+    private float damageZoneSizeHalf;
 
     private void Awake()
     {
         worldSizeHalf = worldSize / 2;
+        damageZoneSizeHalf = damageZoneSize / 2;
         BoxCollider2D[] boxColliders = GetComponents<BoxCollider2D>();
-        boxColliders[0].offset = new Vector2(0, worldSizeHalf);
-        boxColliders[0].size = new Vector2(worldSize, damageZoneSize);
+        boxColliders[0].offset = new Vector2(0, worldSizeHalf + damageZoneSizeHalf);
+        boxColliders[0].size = new Vector2(worldSize + damageZoneSize * 2, damageZoneSize);
 
-        boxColliders[1].offset = new Vector2(0, -worldSizeHalf);
-        boxColliders[1].size = new Vector2(worldSize, damageZoneSize);
+        boxColliders[1].offset = new Vector2(0, -worldSizeHalf -damageZoneSizeHalf);
+        boxColliders[1].size = new Vector2(worldSize + damageZoneSize * 2, damageZoneSize);
 
-        boxColliders[2].offset = new Vector2(worldSizeHalf, 0);
+        boxColliders[2].offset = new Vector2(worldSizeHalf + damageZoneSizeHalf, 0);
         boxColliders[2].size = new Vector2(damageZoneSize, worldSize);
 
-        boxColliders[3].offset = new Vector2(-worldSizeHalf, 0);
+        boxColliders[3].offset = new Vector2(-worldSizeHalf - damageZoneSizeHalf, 0);
         boxColliders[3].size = new Vector2(damageZoneSize, worldSize);
     }
 
@@ -34,7 +36,23 @@ public class WorldBorder : MonoBehaviour
     {
         if(collision.gameObject.TryGetComponent(out DamageModel model))
         {
-            model.Damage(damage * Time.fixedDeltaTime, DamageDirection.Front); //TODO
+            Vector2 dirVec;
+            if(collision.transform.position.x < -worldSizeHalf)
+            {
+                dirVec = Vector2.left;
+            } else if (collision.transform.position.x > worldSizeHalf)
+            {
+                dirVec = Vector2.right;
+            } else if (collision.transform.position.y > worldSizeHalf)
+            {
+                dirVec = Vector2.up;
+            } else 
+            {
+                dirVec = Vector2.down;
+            }
+
+            DamageDirection dir = DamageModel.AngleToDirection(Vector2.SignedAngle(collision.transform.up, dirVec));
+            model.Damage(damage * Time.fixedDeltaTime, dir);
         }
     }
 

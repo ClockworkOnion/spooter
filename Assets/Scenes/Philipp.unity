@@ -225,38 +225,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 73184391, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 363.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 73184391, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -179.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 977754004, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 346.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 977754004, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -166.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1397285440, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 363.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1397285440, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -150.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537010901, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 378.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537010901, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -165.4
-      objectReference: {fileID: 0}
     - target: {fileID: 5670192413724087027, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
       propertyPath: m_Name
       value: HUDCanvas
@@ -5703,11 +5671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784922, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 326
+      value: 393
       objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784922, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -324
+      value: -1515
       objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784922, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6053,6 +6021,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1151033423952571852, guid: ee491351cbcf692448a9e9d20d4c0015, type: 3}
+      propertyPath: worldSize
+      value: 2844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151033423952571852, guid: ee491351cbcf692448a9e9d20d4c0015, type: 3}
+      propertyPath: damageZoneSize
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 1151033423952571853, guid: ee491351cbcf692448a9e9d20d4c0015, type: 3}
       propertyPath: m_RootOrder
       value: 14
