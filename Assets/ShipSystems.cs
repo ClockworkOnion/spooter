@@ -12,7 +12,7 @@ public class ShipSystems : MonoBehaviour
     private AudioSource engineSound;
     private float engineVolume = 0f;
 
-    private ShieldRingDisplay rings;
+    private ShieldRingDisplay engineRings;
 
     void Awake()
     {
@@ -21,7 +21,7 @@ public class ShipSystems : MonoBehaviour
 
     void Start()
     {
-        rings = GameObject.Find("EngineRings").GetComponent<ShieldRingDisplay>();
+        engineRings = GameObject.Find("EngineRings").GetComponent<ShieldRingDisplay>();
     }
 
     void Update()
@@ -32,7 +32,7 @@ public class ShipSystems : MonoBehaviour
             energyPool += energyRegeneration * Time.deltaTime;
         }
 
-        rings.SetPercentages(energyPool, maxEnergyPool); // For now...
+        engineRings.SetPercentages(energyPool, maxEnergyPool); // For now...
     }
 
     public float Energy
@@ -60,4 +60,5 @@ public class ShipSystems : MonoBehaviour
         }
         engineSound.volume = engineVolume;
     }
-}
+    
+   }
