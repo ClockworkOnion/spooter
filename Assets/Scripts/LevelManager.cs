@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,9 +12,18 @@ public class LevelManager : MonoBehaviour
     Transform playerTransform;
     public GameObject[] enemyShipPrefabs;
 
+    // Wave Mode
+    public bool waveModeOn = false;
+    public int waveNo = 1;
+    TextMeshProUGUI waveText;
+    public float timeToNextWave = 0f;
+
+
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        waveText = GameObject.Find("WaveClearText").GetComponent<TextMeshProUGUI>();
+        waveText.enabled = false;
 
         if (enemyShipPrefabs.Length == 0) Debug.Log("Forgot to put prefabs into LevelManager?");
 
@@ -38,6 +48,8 @@ public class LevelManager : MonoBehaviour
             currentEnemyCount = enemiesInScene.Count;
             enemyReinforcements--;
         }
+
+        if (currentEnemyCount == 0 && enemyReinforcements == 0) TriggerNextWave();
     }
 
     private int MinusOrNot()
@@ -56,6 +68,23 @@ public class LevelManager : MonoBehaviour
     {
         maxEnemyCount = maxEnemies;
         enemyReinforcements = totalEnemies;
+    }
+
+    private void TriggerNextWave()
+    {
+        StartCoroutine(HideWaveText(2));
+        waveNo++;
+        enemyReinforcements = (waveNo + MinusOrNot())*2;
+        maxEnemyCount = Mathf.Min((waveNo + MinusOrNot()), enemyReinforcements);
+        waveText.enabled = true;
+        waveText.text = "Wave " + waveNo.ToString() +  " Cleared! \n  Shields and Energy restored. \n\n  Now try the next wave:\n" + maxEnemyCount.ToString() + " at once, " + enemyReinforcements.ToString() + " in total.";
+
+    }
+
+    IEnumerator HideWaveText(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        waveText.enabled = false;
     }
 
 }
