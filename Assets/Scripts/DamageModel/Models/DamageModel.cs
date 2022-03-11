@@ -18,7 +18,9 @@ public abstract class DamageModel : MonoBehaviour
     public float rechargeDrain;
     public float rechargeSpeed;
 
+    [SerializeField]
     float[] shield = new float[4];
+    [SerializeField]
     float hull;
 
     private ShipSystems systems;
@@ -58,8 +60,8 @@ public abstract class DamageModel : MonoBehaviour
         }
         if(notFull != 0)
         {
-            systems.useEnergy(rechargeDrain);
-            RechargeShields(notFull, rechargeSpeed);
+            systems.useEnergy(rechargeDrain * Time.deltaTime);
+            RechargeShields(notFull, rechargeSpeed * Time.deltaTime);
         }
     }
 

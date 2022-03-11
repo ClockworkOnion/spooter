@@ -27,9 +27,9 @@ public abstract class DirectionalDamage : MonoBehaviour
     {
         if (trigger.TryGetComponent(out DamageModel model))
         {
-            model.Damage(GetTriggerDamage(trigger, coll)
-                , DamageModel.AngleToDirection(Vector2.SignedAngle(transform.up
-                , trigger.Distance(coll).normal)));
+            DamageDirection dd = DamageModel.AngleToDirection(Vector2.SignedAngle(trigger.transform.up
+                , trigger.Distance(coll).normal));
+            model.Damage(GetTriggerDamage(trigger, coll), dd);
         }
     }
 
@@ -38,8 +38,8 @@ public abstract class DirectionalDamage : MonoBehaviour
         if (collision.collider.TryGetComponent(out DamageModel model)) { 
             ContactPoint2D contact = collision.GetContact(0);
             model.Damage(GetCollisionDamage(collision, contact)
-                , DamageModel.AngleToDirection(Vector2.SignedAngle(transform.up
-                , contact.point - (Vector2)transform.position)));
+                , DamageModel.AngleToDirection(Vector2.SignedAngle(collision.collider.transform.up
+                , contact.point - (Vector2)collision.collider.transform.position)));
         }
     }
 }
