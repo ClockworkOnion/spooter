@@ -8,16 +8,20 @@ public enum DamageDirection
     Front,Right,Back,Left
 
 }
-
+[RequireComponent(typeof(ShipSystems))]
 public abstract class DamageModel : MonoBehaviour
 {
     [Range(0f, 1000f)]
     public float maxHull = 100;
     [Range(0f, 1000f)]
     public float[] maxShield = new float[4];
+    public float rechargeDrain;
+    public float rechargeSpeed;
 
     float[] shield = new float[4];
     float hull;
+
+    private ShipSystems systems;
 
     public float Hull
     {
@@ -37,8 +41,26 @@ public abstract class DamageModel : MonoBehaviour
 
     public void Start()
     {
+        systems = GetComponent<ShipSystems>();
         hull = maxHull;
         Array.Copy(maxShield, shield, 4);
+    }
+
+    public void Update()
+    {
+        int notFull = shield.Length;
+        for (int i = 0; i < shield.Length; i++)
+        {
+            if (shield[i] == maxShield[i])
+            {
+                --notFull;
+            }
+        }
+        if(notFull != 0)
+        {
+            systems.useEnergy(rechargeDrain);
+            RechargeShields(notFull, rechargeSpeed);
+        }
     }
 
     public void Damage(float amount, DamageDirection direction)
@@ -72,16 +94,8 @@ public abstract class DamageModel : MonoBehaviour
         hull = Mathf.Min(hull + amount, maxHull);
     }
 
-    public void RechargeShields(float amount)
+    public void RechargeShields(int notFull, float amount)
     {
-        int notFull = shield.Length;
-        for (int i = 0; i < shield.Length; i++)
-        {
-            if(shield[i] == maxShield[i])
-            {
-                --notFull;
-            }
-        }
         for (int i = 0; i < shield.Length; i++)
         {
             if (shield[i] != maxShield[i])
