@@ -11,7 +11,7 @@ public abstract class Weapon : MonoBehaviour
     public int weapon;
     [Range(0f, 3f)]
     public float refireRate;
-    [Range(1f, 100f)]
+    [Range(1f, 1000f)]
     public float speed;
     public AudioClip laserSound;
     public GameObject projectileType;

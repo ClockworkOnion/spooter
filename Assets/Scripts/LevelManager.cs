@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     public int maxEnemyCount = 3;
     public int enemyReinforcements = 5;
     Transform playerTransform;
+    PlayerDamageModel playerDmgMdl;
     public GameObject[] enemyShipPrefabs;
 
     // Wave Mode
@@ -17,11 +18,13 @@ public class LevelManager : MonoBehaviour
     public int waveNo = 1;
     TextMeshProUGUI waveText;
     public float timeToNextWave = 0f;
+    private int totalShipsDestroyed = 0;
 
 
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        playerDmgMdl = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDamageModel>();
         waveText = GameObject.Find("WaveClearText").GetComponent<TextMeshProUGUI>();
         waveText.enabled = false;
 
@@ -62,6 +65,7 @@ public class LevelManager : MonoBehaviour
     {
         enemiesInScene.Remove(enm);
         currentEnemyCount = enemiesInScene.Count;
+        totalShipsDestroyed++;
     }
 
     public void CreateEnemyWave(int maxEnemies, int totalEnemies)
@@ -72,13 +76,14 @@ public class LevelManager : MonoBehaviour
 
     private void TriggerNextWave()
     {
-        StartCoroutine(HideWaveText(2));
+        StartCoroutine(HideWaveText(4));
         waveNo++;
         enemyReinforcements = (waveNo + MinusOrNot())*2;
         maxEnemyCount = Mathf.Min((waveNo + MinusOrNot()), enemyReinforcements);
         waveText.enabled = true;
         waveText.text = "Wave " + waveNo.ToString() +  " Cleared! \n  Shields and Energy restored. \n\n  Now try the next wave:\n" + maxEnemyCount.ToString() + " at once, " + enemyReinforcements.ToString() + " in total.";
-
+        playerDmgMdl.RechargeShields(1, 100);
+        playerDmgMdl.RepairHull(100);
     }
 
     IEnumerator HideWaveText(float timer)

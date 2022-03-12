@@ -13,6 +13,7 @@ public class Move : MonoBehaviour
     public float turningCost = 2f;
     Rigidbody2D body;
     ShipSystems systems;
+    [Tooltip("Acceleration input value")]
     [SerializeField]
     private float verticalThrust;
     [SerializeField]

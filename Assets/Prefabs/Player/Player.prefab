@@ -440,14 +440,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa54fc5fb425437469a00c61f247b19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHull: 100
+  maxHull: 69
   maxShield:
-  - 100
-  - 100
-  - 100
-  - 100
+  - 67
+  - 63
+  - 59
+  - 39
   rechargeDrain: 0
   rechargeSpeed: 0
+  shield:
+  - 0
+  - 0
+  - 0
+  - 0
+  hull: 0
 --- !u!114 &2308675875130784900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,8 +478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b4e157879e3694698ebe838eeb9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleSpeed: 1
-  dirSpeed: 1
+  angleSpeed: 5.73
+  dirSpeed: 5.6
   thrusterCost: 5
   turningCost: 2
   verticalThrust: 0
@@ -492,7 +498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxEnergyPool: 100
   energyPool: 100
-  energyRegeneration: 1
+  energyRegeneration: 20
 --- !u!82 &1539138991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -503,7 +509,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fee306ae2f614164cbb970a603feaa82, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -699,12 +705,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 15.3
   weapon: 1
-  refireRate: 0.27
-  speed: 34.2
+  refireRate: 1
+  speed: 131
   laserSound: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
-  projectileType: {fileID: 4124514889804667390, guid: a266bd39b81665748aee801f4d4edd8f, type: 3}
+  projectileType: {fileID: 4124514889804667390, guid: 5974a1592c3ff1e48a9897d639c57e39, type: 3}
   firingAngle: 0
-  drain: 1.1
+  drain: 15
 --- !u!114 &174650754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,8 +725,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 20
   weapon: 0
-  refireRate: 0.37
-  speed: 48.5
+  refireRate: 0.26
+  speed: 293
   laserSound: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
   projectileType: {fileID: 4124514889804667390, guid: a266bd39b81665748aee801f4d4edd8f, type: 3}
   firingAngle:
