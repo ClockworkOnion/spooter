@@ -5665,6 +5665,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: drain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[0]
+      value: -138
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[1]
+      value: -52
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[2]
+      value: 57
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[3]
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[4]
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[5]
+      value: 124
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[6]
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 174650754, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
+      propertyPath: firingAngle.Array.data[7]
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 2308675875130784922, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}
       propertyPath: m_RootOrder
       value: 13
