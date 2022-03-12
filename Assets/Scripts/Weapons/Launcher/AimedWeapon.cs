@@ -25,6 +25,18 @@ public abstract class AimedWeapon : Weapon
     {
         float angle = Vector2.SignedAngle(crosshair.transform.position - transform.position, Vector2.up);
         float angleToShip = Vector2.SignedAngle(crosshair.transform.position - transform.position, transform.up);
+        if(firingAngle.Length == 2)
+        {
+            if(angleToShip < firingAngle[0])
+            {
+                return firingAngle[0];
+            }
+            if(angleToShip > firingAngle[1])
+            {
+                return firingAngle[1];
+            }
+            return angle;
+        }
         for (int i = 1; i < firingAngle.Length - 1; i += 2)
         {
             if(angleToShip > firingAngle[i] && angleToShip < firingAngle[i + 1])
