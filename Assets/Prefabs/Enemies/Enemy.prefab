@@ -338,6 +338,12 @@ MonoBehaviour:
   - 10
   rechargeDrain: 0
   rechargeSpeed: 0
+  shield:
+  - 0
+  - 0
+  - 0
+  - 0
+  hull: 0
   explosion: {fileID: 2377161859457127625, guid: 68622fc70c8f92e4190b549186fac07d, type: 3}
 --- !u!61 &1768084374954124912
 BoxCollider2D:
@@ -476,7 +482,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShipSystems : MonoBehaviour
 {
+    public string shipName = "defaultShip";
     public float maxEnergyPool = 100;
     [SerializeField]
     private float energyPool = 100;

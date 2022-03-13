@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour {
     {
         waveClearText = GameObject.Find("WaveClearText").GetComponent<TextMeshProUGUI>();
         gamestate = Gamestate.playing;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void GameOver()
@@ -42,6 +43,12 @@ public class GameManager : MonoBehaviour {
         waveClearText.SetText("Game Over!\nPress R to restart!");
         gamestate = Gamestate.gameOver;
         Debug.Log("Game over!");
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Scene Loaded!");
+        waveClearText = GameObject.Find("WaveClearText").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame

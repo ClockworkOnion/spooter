@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCam: {fileID: 0}
+  TARGETING_DISTANCE: 20
 --- !u!1001 &7051735980187331810
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class EnemyAIControl : MonoBehaviour
     Vector3 lastPosition;
     [SerializeField]
     float currentSpeed = 0f;
+    private ShipSystems shipSystems;
+    private EnemyDamageModel dmgModel;
 
     private LevelManager thisLevel;
 
@@ -32,6 +34,8 @@ public class EnemyAIControl : MonoBehaviour
     {
         lastPosition = transform.position;
         rb = GetComponent<Rigidbody2D>();
+        shipSystems = GetComponent<ShipSystems>();
+        dmgModel = GetComponent<EnemyDamageModel>();
     }
 
     void Start()
@@ -102,5 +106,13 @@ public class EnemyAIControl : MonoBehaviour
     private void OnDestroy() // Tell the level manager when this ship was destroyed so it can do other stuff
     {
         if (thisLevel != null) thisLevel.OnEnemyDestroyed(this);
+    }
+
+    public Dictionary<string, string> ShipInfo()
+    {
+        Dictionary<string, string> info = new Dictionary<string, string>();
+        info.Add("name", shipSystems.shipName);
+        info.Add("hull", Mathf.Round((dmgModel.Hull / dmgModel.maxHull) * 100).ToString());
+        return info;
     }
 }

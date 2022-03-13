@@ -496,6 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4558740211e794f8fb7ed577a8bc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipName: playerShip
   maxEnergyPool: 100
   energyPool: 100
   energyRegeneration: 20

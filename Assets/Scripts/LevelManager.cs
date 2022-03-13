@@ -92,4 +92,9 @@ public class LevelManager : MonoBehaviour
         waveText.enabled = false;
     }
 
+    public List<EnemyAIControl> getActiveEnemies()
+    {
+        return enemiesInScene;
+    }
+
 }
