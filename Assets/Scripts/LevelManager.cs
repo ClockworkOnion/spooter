@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
     public GameObject[] enemyShipPrefabs;
 
     // Wave Mode
-    public bool waveModeOn = false;
+    public bool waveModeOn = true;
     public int waveNo = 1;
     TextMeshProUGUI waveText;
     public float timeToNextWave = 0f;
@@ -41,7 +41,8 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        while (currentEnemyCount < maxEnemyCount && enemyReinforcements > 0) // Respawn enemy ships until reinforcements are empty
+        if (playerTransform == null) return;
+        while (currentEnemyCount < maxEnemyCount && enemyReinforcements > 0 && waveModeOn) // Respawn enemy ships until reinforcements are empty
         {
             float spawnDistance = 300f;
             Vector3 spawnPosition = new Vector3(spawnDistance * MinusOrNot(), spawnDistance * MinusOrNot(), 0);
@@ -52,7 +53,7 @@ public class LevelManager : MonoBehaviour
             enemyReinforcements--;
         }
 
-        if (currentEnemyCount == 0 && enemyReinforcements == 0) TriggerNextWave();
+        if (currentEnemyCount == 0 && enemyReinforcements == 0 && waveModeOn) TriggerNextWave();
     }
 
     private int MinusOrNot()

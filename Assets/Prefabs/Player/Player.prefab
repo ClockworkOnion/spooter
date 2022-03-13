@@ -440,12 +440,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa54fc5fb425437469a00c61f247b19d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHull: 69
+  maxHull: 150
   maxShield:
-  - 67
-  - 63
-  - 59
-  - 39
+  - 205
+  - 209
+  - 205
+  - 205
   rechargeDrain: 0
   rechargeSpeed: 0
   shield:
@@ -454,6 +454,7 @@ MonoBehaviour:
   - 0
   - 0
   hull: 0
+  explosionPrefab: {fileID: 2377161859457127625, guid: 68622fc70c8f92e4190b549186fac07d, type: 3}
 --- !u!114 &2308675875130784900
 MonoBehaviour:
   m_ObjectHideFlags: 0

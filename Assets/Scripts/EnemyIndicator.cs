@@ -19,7 +19,7 @@ public class EnemyIndicator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!rend.isVisible)
+        if (!rend.isVisible && player != null)
         {
             indicator.SetActive(true);
             indicator.transform.up = transform.position - player.transform.position;

@@ -48,6 +48,7 @@ public class EnemyAIControl : MonoBehaviour
 
     void Update()
     {
+        if (playerPosition == null) return;
         Debug.DrawLine(transform.position, movementGoal, Color.black);
         positions = PositionsAroundPlayer(approachDistanceCurrent);
         movementGoal = positions[goalIndex]; // Update movement goal
