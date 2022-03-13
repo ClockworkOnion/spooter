@@ -5,6 +5,7 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
+    private AudioSource audioSource;
     private List<EnemyAIControl> enemiesInScene = new List<EnemyAIControl>();
     public int currentEnemyCount = 0;
     public int maxEnemyCount = 3;
@@ -18,8 +19,15 @@ public class LevelManager : MonoBehaviour
     public int waveNo = 1;
     TextMeshProUGUI waveText;
     public float timeToNextWave = 0f;
-    private int totalShipsDestroyed = 0;
+    public int totalShipsDestroyed = 0;
 
+    [Header("Sound Files")]
+    public AudioClip waveCleared;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -79,6 +87,7 @@ public class LevelManager : MonoBehaviour
     {
         StartCoroutine(HideWaveText(4));
         waveNo++;
+        audioSource.PlayOneShot(waveCleared);
         enemyReinforcements = (waveNo + MinusOrNot())*2;
         maxEnemyCount = Mathf.Min((waveNo + MinusOrNot()), enemyReinforcements);
         waveText.enabled = true;

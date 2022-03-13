@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour {
     public void GameOver()
     {
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        int destroyed = GameObject.Find("LevelManager").GetComponent<LevelManager>().totalShipsDestroyed;
         waveClearText.enabled = true;
-        waveClearText.SetText("Game Over!\nPress R to restart!");
+        waveClearText.SetText("Game Over!\nYou destroyed "+destroyed+ " enemy ships, killing " + destroyed*37+ " crew members. I hope you are proud of yourself.\nPress R to restart!");
         gamestate = Gamestate.gameOver;
         Debug.Log("Game over!");
     }

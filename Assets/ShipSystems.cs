@@ -17,21 +17,22 @@ public class ShipSystems : MonoBehaviour
 
     void Awake()
     {
-        engineSound = GetComponent<AudioSource>();
     }
 
     void Start()
     {
+        engineSound = transform.Find("EngineTrailLeft").GetComponent<AudioSource>();
         engineRings = GameObject.Find("EngineRings").GetComponent<ShieldRingDisplay>();
     }
 
     void Update()
     {
-        HandleEngineVolume();
         if (energyPool < maxEnergyPool)
         {
             energyPool += energyRegeneration * Time.deltaTime;
         }
+        if (gameObject.tag != "Player") return; // Player only stuff from here on (no enemy)
+        HandleEngineVolume();
     }
 
     public float Energy
