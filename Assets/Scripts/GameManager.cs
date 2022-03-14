@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour {
     private Gamestate gamestate;
     private TextMeshProUGUI waveClearText;
 
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -44,6 +43,7 @@ public class GameManager : MonoBehaviour {
         waveClearText.enabled = true;
         waveClearText.SetText($"Game Over!\nYour score was : {score}\nPress R to restart!");
         gamestate = Gamestate.gameOver;
+        ScoreBoard.GetScoreBoard().OnGameFinished(score);
         Debug.Log("Game over!");
     }
 
@@ -62,8 +62,9 @@ public class GameManager : MonoBehaviour {
     {
         if (gamestate == Gamestate.gameOver)
         {
-            if (Input.GetKey("r"))
+            if (Input.GetKey("r") && ScoreBoard.GetScoreBoard().Restartable)
             {
+                ScoreBoard.GetScoreBoard().OnGameRestart();
                 score = 0;
                 waveClearText.enabled = false;
                 gamestate = Gamestate.playing;
