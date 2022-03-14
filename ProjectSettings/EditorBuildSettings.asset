@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StorySoFar.unity
+    guid: f25bd8421cb58c3418f503a227523790
+  - enabled: 1
     path: Assets/Scenes/Ramon_MainMenu.unity
     guid: e7a3b8d5d1ef321408faf18ab29bcabb
   - enabled: 1
