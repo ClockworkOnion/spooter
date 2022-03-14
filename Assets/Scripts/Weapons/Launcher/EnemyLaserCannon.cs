@@ -16,6 +16,7 @@ public class EnemyLaserCannon : AimedWeapon
 
     protected override bool Refire()
     {
+        if (playerTransform == null) return false;
         return (lastShot += Time.deltaTime) > refireRate && Vector3.Distance(playerTransform.position, transform.position) < firingDistance;
     }
 

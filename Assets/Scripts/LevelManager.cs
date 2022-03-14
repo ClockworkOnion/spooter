@@ -5,6 +5,7 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
+    private AudioSource audioSource;
     private List<EnemyAIControl> enemiesInScene = new List<EnemyAIControl>();
     public int currentEnemyCount = 0;
     public int maxEnemyCount = 3;
@@ -14,12 +15,19 @@ public class LevelManager : MonoBehaviour
     public GameObject[] enemyShipPrefabs;
 
     // Wave Mode
-    public bool waveModeOn = false;
+    public bool waveModeOn = true;
     public int waveNo = 1;
     TextMeshProUGUI waveText;
     public float timeToNextWave = 0f;
-    private int totalShipsDestroyed = 0;
+    public int totalShipsDestroyed = 0;
 
+    [Header("Sound Files")]
+    public AudioClip waveCleared;
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Start()
     {
@@ -41,7 +49,8 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        while (currentEnemyCount < maxEnemyCount && enemyReinforcements > 0) // Respawn enemy ships until reinforcements are empty
+        if (playerTransform == null) return;
+        while (currentEnemyCount < maxEnemyCount && enemyReinforcements > 0 && waveModeOn) // Respawn enemy ships until reinforcements are empty
         {
             float spawnDistance = 300f;
             Vector3 spawnPosition = new Vector3(spawnDistance * MinusOrNot(), spawnDistance * MinusOrNot(), 0);
@@ -52,7 +61,7 @@ public class LevelManager : MonoBehaviour
             enemyReinforcements--;
         }
 
-        if (currentEnemyCount == 0 && enemyReinforcements == 0) TriggerNextWave();
+        if (currentEnemyCount == 0 && enemyReinforcements == 0 && waveModeOn) TriggerNextWave();
     }
 
     private int MinusOrNot()
@@ -78,6 +87,7 @@ public class LevelManager : MonoBehaviour
     {
         StartCoroutine(HideWaveText(4));
         waveNo++;
+        audioSource.PlayOneShot(waveCleared);
         enemyReinforcements = (waveNo + MinusOrNot())*2;
         maxEnemyCount = Mathf.Min((waveNo + MinusOrNot()), enemyReinforcements);
         waveText.enabled = true;

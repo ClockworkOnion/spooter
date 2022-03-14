@@ -18,7 +18,7 @@ public class GUIControl : MonoBehaviour
     private float maxEnergy = 100;
     private float currentEnergy = 50;
     private ShieldRingDisplay energyRings;
-    private TextMeshProUGUI infoText;
+    private TextMeshProUGUI infoText, speedText;
     private RectTransform infoRect;
     private Vector3 infoIdlePos;
 
@@ -35,6 +35,7 @@ public class GUIControl : MonoBehaviour
         shieldsDisplay[3] = transform.Find("ShieldLeft").GetComponent<ShieldRingDisplay>();
         energyRings = transform.Find("EngineRings").GetComponent<ShieldRingDisplay>();
         infoText = transform.Find("InfoText").GetComponent<TextMeshProUGUI>();
+        speedText = transform.Find("SpeedText").GetComponent<TextMeshProUGUI>();
         infoRect = transform.Find("InfoText").GetComponent<RectTransform>();
         infoIdlePos = infoRect.position;
 
@@ -44,6 +45,10 @@ public class GUIControl : MonoBehaviour
 
     void Update()
     {
+        // Speed Display
+        speedText.SetText("Speed:\n" + plrShipSystems.GetComponent<Rigidbody2D>().velocity.ToString());
+
+
         // Energy pool
         maxEnergy = plrShipSystems.maxEnergyPool;
         currentEnergy = plrShipSystems.Energy;
@@ -56,6 +61,7 @@ public class GUIControl : MonoBehaviour
             shieldsDisplay[i].SetPercentages(currentShields[i], maxShields[i]);
         }
 
+        // Targeting
         EnemyAIControl closestEnemy = crosshair.ClosestEnemy();
         if (closestEnemy != null)
         {

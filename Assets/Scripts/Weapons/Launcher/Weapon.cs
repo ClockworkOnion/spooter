@@ -25,7 +25,7 @@ public abstract class Weapon : MonoBehaviour
     protected virtual void Start()
     {
         shipBody = GetComponentInParent<Rigidbody2D>();
-        audioSource = GetComponents<AudioSource>()[1];
+        audioSource = GetComponent<AudioSource>();
         systems = GetComponentInParent<ShipSystems>();
     }
 
@@ -43,7 +43,7 @@ public abstract class Weapon : MonoBehaviour
                 {
                     body.velocity = Velocity(angle);
                 }
-                audioSource.PlayOneShot(laserSound);
+                // audioSource.PlayOneShot(laserSound);
             }
         }
     }
