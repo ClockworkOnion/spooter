@@ -10,7 +10,7 @@ public class AsteroidFields : MonoBehaviour
     public float Z_EXTENDS = 40f;
     public int asteroidCount = 100;
     private Transform playerPosition;
-    private float teleportDistance;
+    private float teleportDistance; // the distance to the player at which the field will teleport
 
     void Start()
     {
@@ -52,22 +52,25 @@ public class AsteroidFields : MonoBehaviour
 
     void Update()
     {
-        if (playerPosition.position.x - transform.position.x > teleportDistance)
+        if (playerPosition == null) return;
+        float xDiff = playerPosition.position.x - transform.position.x;
+        float yDiff = playerPosition.position.y - transform.position.y;
+        if (xDiff > teleportDistance)
         {
             transform.position = transform.position + new Vector3(6 * EXTENDS, 0, 0);
         }
 
-        if (playerPosition.position.x - transform.position.x < -teleportDistance)
+        if (xDiff < -teleportDistance)
         {
             transform.position = transform.position + new Vector3(-6 * EXTENDS, 0, 0);
         }
 
-        if (playerPosition.position.y - transform.position.y > teleportDistance)
+        if (yDiff > teleportDistance)
         {
             transform.position = transform.position + new Vector3(0, 6 * EXTENDS, 0);
         }
 
-        if (playerPosition.position.y - transform.position.y < -teleportDistance)
+        if (yDiff < -teleportDistance)
         {
             transform.position = transform.position + new Vector3(0, -6 * EXTENDS, 0);
         }

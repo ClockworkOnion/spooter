@@ -27,6 +27,7 @@ public abstract class DirectionalDamage : MonoBehaviour
     {
         if (trigger.TryGetComponent(out DamageModel model))
         {
+      
             DamageDirection dd = DamageModel.AngleToDirection(Vector2.SignedAngle(trigger.transform.up
                 , trigger.Distance(coll).normal));
             model.Damage(GetTriggerDamage(trigger, coll), dd);

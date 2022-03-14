@@ -14,6 +14,8 @@ public class ShipSystems : MonoBehaviour
     private float engineVolume = 0f;
 
     private ShieldRingDisplay engineRings;
+    [SerializeField]
+    private Vector3 movementVector;
 
     void Awake()
     {
@@ -33,13 +35,16 @@ public class ShipSystems : MonoBehaviour
         }
         if (gameObject.tag != "Player") return; // Player only stuff from here on (no enemy)
         HandleEngineVolume();
+
     }
 
+  
     public float Energy
     {
         get => energyPool;
     }
 
+  
     public bool useEnergy(float amount)
     {
         if (amount < energyPool)

@@ -45,8 +45,10 @@ public class GUIControl : MonoBehaviour
 
     void Update()
     {
+        if (plrShipSystems == null) return;
+
         // Speed Display
-        speedText.SetText("Speed:\n" + plrShipSystems.GetComponent<Rigidbody2D>().velocity.ToString());
+        speedText.SetText("Speed:\n" + plrShipSystems.GetComponent<Rigidbody2D>().velocity.ToString() + "\nTotal:\n");
 
 
         // Energy pool

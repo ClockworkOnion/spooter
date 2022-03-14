@@ -6,19 +6,38 @@ public class ShipCannon : MonoBehaviour
 {
     [Range(0.0f, 360.0f)]
     public float maxFiringAngle = 90;
-    public GameObject projectileType; // The gameobject/prefab that will be shot by this cannon
-    private AudioSource audio;
-    public AudioClip laserSound;
+
+    [Tooltip("Gameobject/Prefab that will be shot by this cannon")]
+    public GameObject projectileType; 
 
     private Crosshair crosshair;
+    private Rigidbody2D rb;
+    [SerializeField]
+    private bool onEnemy;
+
+    private Transform playerTransform;
 
     void Start()
     {
         crosshair = GameObject.Find("Crosshair").GetComponent<Crosshair>();
-        audio = GetComponent<AudioSource>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
+        rb = GetComponentInParent<Rigidbody2D>();
+        if (rb.gameObject.tag.Equals("Enemy")) onEnemy = true;
+
     }
 
     void Update()
+    {
+        if (!onEnemy)
+        {
+            HandlePlayerShots();
+            return;
+        }
+
+    }
+
+    void HandlePlayerShots()
     {
         if (Input.GetMouseButtonDown(0))
         {

@@ -1,0 +1,58 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GuidedMissileLauncher : DirectionalWeapon
+{
+
+    [Range(0f, 100f)]
+    public float drain;
+    private Crosshair crosshair;
+    public int volleySize = 4;
+
+    protected override void Start()
+    {
+        base.Start();
+        crosshair = GameObject.Find("Crosshair").GetComponent<Crosshair>();
+    }
+    protected override bool Powered()
+    {
+        return systems.useEnergy(drain);
+    }
+
+    protected override void Update()
+    {
+        if (Refire() && crosshair.ClosestEnemy() != null)
+        {
+            FireVolley(crosshair.ClosestEnemy().transform);
+            StartCoroutine(DelayedVolley(0.25f, crosshair.ClosestEnemy().transform));
+        }
+    }
+
+    private void FireVolley(Transform target)
+    {
+        for (int i = 0; i < volleySize; i++ )
+        {
+            float spread = Random.Range(-2, 2);
+            Vector3 spreadVector = new Vector3(spread, spread, spread);
+            float angle = FiringAngle() + Random.Range(-20, 20);
+            if (CanFire(angle) && Powered()) {
+                lastShot = 0;
+                GameObject shot = Instantiate(projectileType, transform.position + spreadVector,
+                    Quaternion.AngleAxis(-angle, Vector3.forward));
+                Destroy(shot, lifeTime);
+                if (shot.TryGetComponent(out Rigidbody2D body))
+                {
+                    body.velocity = Velocity(angle);
+                }
+                shot.GetComponent<GuidedMissile>().SetTarget(target);
+            }
+        }
+    }
+    
+    IEnumerator DelayedVolley(float delay, Transform target)
+    {
+        yield return new WaitForSeconds(delay);
+        if (target != null) FireVolley(target);
+    }
+}

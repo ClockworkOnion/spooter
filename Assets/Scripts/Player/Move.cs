@@ -11,6 +11,8 @@ public class Move : MonoBehaviour
     public float dirSpeed;
     public float thrusterCost = 5f;
     public float turningCost = 2f;
+    private float boostPower = 30f;
+    private bool boostActive = false;
     Rigidbody2D body;
     ShipSystems systems;
     [Tooltip("Acceleration input value")]
@@ -36,13 +38,22 @@ public class Move : MonoBehaviour
         {
             horizontalThrust = Input.GetAxisRaw("Horizontal");
         } else { horizontalThrust = 0f;  }
+
+        if (Input.GetKey(KeyCode.Space) && systems.useEnergy(2f))
+        {
+            boostActive = true;
+        } else { boostActive = false; }
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-
         body.AddForce(dirSpeed * Time.fixedDeltaTime * verticalThrust * transform.up);
         body.AddTorque(angleSpeed * Time.fixedDeltaTime * -horizontalThrust);
+
+        if (boostActive)
+        {
+            body.AddForce(Time.fixedDeltaTime * boostPower * transform.up);
+        }
     }
 }
