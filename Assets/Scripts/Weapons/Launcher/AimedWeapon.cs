@@ -29,11 +29,11 @@ public abstract class AimedWeapon : Weapon
         {
             if(angleToShip < firingAngle[0])
             {
-                return firingAngle[0];
+                return angle - Mathf.DeltaAngle(firingAngle[0], angleToShip);
             }
             if(angleToShip > firingAngle[1])
             {
-                return firingAngle[1];
+                return angle - Mathf.DeltaAngle(firingAngle[1], angleToShip);
             }
             return angle;
         }

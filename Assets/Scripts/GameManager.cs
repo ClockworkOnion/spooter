@@ -7,6 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour { 
 
     static GameManager instance = null;
+    private uint score = 0;
     private Gamestate gamestate;
     private TextMeshProUGUI waveClearText;
 
@@ -40,9 +41,13 @@ public class GameManager : MonoBehaviour {
     {
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         waveClearText.enabled = true;
-        waveClearText.SetText("Game Over!\nPress R to restart!");
+        waveClearText.SetText($"Game Over!\nYour score was : {score}\nPress R to restart!");
         gamestate = Gamestate.gameOver;
         Debug.Log("Game over!");
+    }
+
+    public void AddScore(uint score){
+        this.score += score;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -58,6 +63,7 @@ public class GameManager : MonoBehaviour {
         {
             if (Input.GetKey("r"))
             {
+                score = 0;
                 waveClearText.enabled = false;
                 gamestate = Gamestate.playing;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
