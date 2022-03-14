@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayTheStorySoFar()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        SceneManager.LoadScene(0);
     }
 
     public void PlayCredits()

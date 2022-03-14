@@ -6,6 +6,9 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class StoryMusic : MonoBehaviour
 {
+    private float delay = 90f;
+    private float timeElapsed;
+
     AudioSource audioData;
 
     void Start()
@@ -13,5 +16,15 @@ public class StoryMusic : MonoBehaviour
         audioData = GetComponent<AudioSource>();
         // audioData.Play();
         Debug.Log("started");
+    }
+
+    private void Update()
+    {
+        timeElapsed += Time.deltaTime;
+
+        if (timeElapsed > delay)
+        {
+            audioData.Stop();
+        }
     }
 }
