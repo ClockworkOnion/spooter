@@ -101,7 +101,7 @@ public class GuidedMissile : DirectionalDamage
 
     private void reselectGoal()
     {
-        movementGoal = PositionsAroundTarget(Random.Range(10f, 20f) * (LIFESPAN-activeTime-1))[Random.Range(0, 3)];
+        movementGoal = PositionsAroundTarget(Random.Range(10f, 20f) * (LIFESPAN-activeTime-1))[Random.Range(0, 4)];
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -119,11 +119,12 @@ public class GuidedMissile : DirectionalDamage
 
     private Vector3[] PositionsAroundTarget(float distance)
     {
-        Vector3[] positions = new Vector3[4];
+        Vector3[] positions = new Vector3[5];
         positions[0] = target.position + Vector3.up * distance;
         positions[1] = target.position + -Vector3.up * distance;
         positions[2] = target.position + -Vector3.right * distance;
         positions[3] = target.position + Vector3.right * distance;
+        positions[4] = target.position;
         return positions;
     }
 
