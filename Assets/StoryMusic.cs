@@ -22,7 +22,7 @@ public class StoryMusic : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
 
-        if (timeElapsed > delay)
+        if (timeElapsed > delay || Input.GetMouseButtonDown(0))
         {
             audioData.Stop();
         }
