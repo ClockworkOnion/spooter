@@ -14,7 +14,7 @@ public class LevelLoader : MonoBehaviour
     {
         timeElapsed += Time.deltaTime;
 
-        if (timeElapsed > delay)
+        if (timeElapsed > delay || Input.GetMouseButtonDown(0))
         {
             SceneManager.LoadScene(1);
         }
