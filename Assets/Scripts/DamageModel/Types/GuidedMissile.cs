@@ -63,6 +63,7 @@ public class GuidedMissile : DirectionalDamage
 
     private void SpawnExplosion() {
         Transform expl = Instantiate(explosionPrefab, transform.position, transform.rotation).transform;
+        Destroy(expl.gameObject, 3f);
         float size = 4f;
         expl.localScale = new Vector3(size, size, size);
         StartCoroutine(DestroyGameObject(2f));

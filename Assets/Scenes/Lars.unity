@@ -845,6 +845,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
+    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
+      propertyPath: enemyShipPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
     - target: {fileID: 125971380216918678, guid: 3012a5420722a5749bae14042daea689, type: 3}
       propertyPath: m_RootOrder
       value: 5
