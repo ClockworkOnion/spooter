@@ -10,8 +10,6 @@ public class LevelLoader : MonoBehaviour
     private float delay = 90f;
     private float timeElapsed;
 
-
-
     private void Update()
     {
         timeElapsed += Time.deltaTime;
