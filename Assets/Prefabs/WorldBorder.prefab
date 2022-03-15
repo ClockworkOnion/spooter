@@ -389,3 +389,5 @@ MonoBehaviour:
   worldSize: 2844
   damageZoneSize: 2000
   damage: 1
+  indicator: {fileID: 4343601833891492273, guid: ecb8fa52a684ba74cac93c4a906cca79, type: 3}
+  distanceToPlayer: 30

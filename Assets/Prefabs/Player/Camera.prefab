@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e23ded3cf949bb4c8d47148355bbf78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followCursor: 0
   offset: {x: 0, y: -70, z: -100}
 --- !u!45 &3626227408275921409
 Skybox:

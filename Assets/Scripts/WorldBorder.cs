@@ -11,6 +11,9 @@ public class WorldBorder : MonoBehaviour
     [Range(1f, 200f)]
     public float damage;
 
+    public GameObject indicator;
+    public float distanceToPlayer = 20;
+
     GameObject canvas;
 
     private float worldSizeHalf;
@@ -36,6 +39,7 @@ public class WorldBorder : MonoBehaviour
 
     private void Start()
     {
+        indicator = Instantiate(indicator, transform);
         canvas = GameObject.Find("WorldBorder/Canvas");
         canvas.SetActive(false);
     }
@@ -45,6 +49,7 @@ public class WorldBorder : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             canvas.SetActive(true);
+            indicator.SetActive(true);
         }
     }
 
@@ -70,6 +75,12 @@ public class WorldBorder : MonoBehaviour
             DamageDirection dir = DamageModel.AngleToDirection(Vector2.SignedAngle(collision.transform.up, dirVec));
             model.Damage(damage * Time.fixedDeltaTime, dir);
         }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Transform player = collision.gameObject.transform;
+            indicator.transform.up = transform.position - player.position;
+            indicator.transform.position = player.position + indicator.transform.up * distanceToPlayer;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -84,6 +95,7 @@ public class WorldBorder : MonoBehaviour
         } else if (collision.gameObject.CompareTag("Player"))
         {
             canvas.SetActive(false);
+            indicator.SetActive(false);
         }
     }
 }
