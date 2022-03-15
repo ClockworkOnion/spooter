@@ -398,18 +398,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1151033423952571852, guid: ee491351cbcf692448a9e9d20d4c0015, type: 3}
-      propertyPath: damage
-      value: 42
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151033423952571852, guid: ee491351cbcf692448a9e9d20d4c0015, type: 3}
-      propertyPath: worldSize
-      value: 5008
-      objectReference: {fileID: 0}
-    - target: {fileID: 1151033423952571852, guid: ee491351cbcf692448a9e9d20d4c0015, type: 3}
-      propertyPath: damageZoneSize
-      value: 1754
-      objectReference: {fileID: 0}
     - target: {fileID: 1151033423952571853, guid: ee491351cbcf692448a9e9d20d4c0015, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -652,9 +640,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1729759470, guid: ed59530150e35a64cae2449d9077a71d, type: 3}
-    - {fileID: 1729759471, guid: ed59530150e35a64cae2449d9077a71d, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed59530150e35a64cae2449d9077a71d, type: 3}
 --- !u!1001 &1693704573
 PrefabInstance:
@@ -821,55 +807,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3626227408275921661, guid: e783a47cf1909d64c8ada3fcd8c8c761, type: 3}
-      propertyPath: followCursor
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3626227408275921662, guid: e783a47cf1909d64c8ada3fcd8c8c761, type: 3}
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e783a47cf1909d64c8ada3fcd8c8c761, type: 3}
---- !u!1 &1825302951 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7289952404722273948, guid: ca36e86409c2bfd40959b4420e0e0212, type: 3}
-  m_PrefabInstance: {fileID: 830126885}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1825302952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825302951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!114 &1825302955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825302951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!1001 &2030826381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -965,9 +908,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 400376713, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
-    - {fileID: 400376714, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
 --- !u!20 &2117592164 stripped
 Camera:
@@ -985,66 +926,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelManager
       objectReference: {fileID: 0}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.size
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[7]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[8]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[9]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[10]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[11]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[12]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
-    - target: {fileID: 125971380216918677, guid: 3012a5420722a5749bae14042daea689, type: 3}
-      propertyPath: enemyShipPrefabs.Array.data[13]
-      value: 
-      objectReference: {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
     - target: {fileID: 125971380216918678, guid: 3012a5420722a5749bae14042daea689, type: 3}
       propertyPath: m_RootOrder
       value: 5
