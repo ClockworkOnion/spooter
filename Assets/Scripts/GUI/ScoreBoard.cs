@@ -77,7 +77,7 @@ public class ScoreBoard : MonoBehaviour
 
     void SaveScore()
     {
-        BinaryWriter file = new BinaryWriter(File.Open(Application.persistentDataPath + "scores", FileMode.OpenOrCreate));
+        BinaryWriter file = new BinaryWriter(File.Open(Application.persistentDataPath + "/scores", FileMode.OpenOrCreate));
         file.Write(scores.Count);
         foreach (var item in scores)
         {
@@ -89,13 +89,16 @@ public class ScoreBoard : MonoBehaviour
 
     void LoadScore()
     {
-        BinaryReader file = new BinaryReader(File.Open(Application.persistentDataPath + "scores", FileMode.OpenOrCreate));
-        int count = file.ReadInt32();
-        for (int i = 0; i < count; i++)
+        BinaryReader file = new BinaryReader(File.Open(Application.persistentDataPath + "/scores", FileMode.OpenOrCreate));
+        if (file.PeekChar() != -1)
         {
-            string tag = file.ReadString();
-            uint score = file.ReadUInt32();
-            scores.Add(new Score(tag, score));
+            int count = file.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                string tag = file.ReadString();
+                uint score = file.ReadUInt32();
+                scores.Add(new Score(tag, score));
+            }
         }
         file.Close();
     }

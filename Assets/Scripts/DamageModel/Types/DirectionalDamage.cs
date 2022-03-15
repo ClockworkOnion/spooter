@@ -8,7 +8,7 @@ public abstract class DirectionalDamage : MonoBehaviour
 {
     Collider2D coll;
     
-    private void Start()
+    protected virtual void Start()
     {
         coll = GetComponent<Collider2D>();
     }

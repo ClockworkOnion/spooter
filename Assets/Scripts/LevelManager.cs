@@ -49,6 +49,10 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        if (Shop.GetShop().Choosen)
+        {
+            waveText.enabled = false;
+        }
         if (playerTransform == null) return;
         while (currentEnemyCount < maxEnemyCount && enemyReinforcements > 0 && waveModeOn) // Respawn enemy ships until reinforcements are empty
         {
@@ -85,21 +89,14 @@ public class LevelManager : MonoBehaviour
 
     private void TriggerNextWave()
     {
-        StartCoroutine(HideWaveText(4));
+        Shop.GetShop().ShowShop();
         waveNo++;
         audioSource.PlayOneShot(waveCleared);
         enemyReinforcements = (waveNo + MinusOrNot())*2;
         maxEnemyCount = Mathf.Min((waveNo + MinusOrNot()), enemyReinforcements);
         waveText.enabled = true;
-        waveText.text = "Wave " + waveNo.ToString() +  " Cleared! \n  Shields and Energy restored. \n\n  Now try the next wave:\n" + maxEnemyCount.ToString() + " at once, " + enemyReinforcements.ToString() + " in total.";
+        waveText.text = $"Wave {waveNo} Cleared! \n  Shields and Energy restored. \n\n  Now try the next wave:\n{maxEnemyCount} at once, {enemyReinforcements} in total.";
         playerDmgMdl.RechargeShields(1, 100);
-        playerDmgMdl.RepairHull(100);
-    }
-
-    IEnumerator HideWaveText(float timer)
-    {
-        yield return new WaitForSeconds(timer);
-        waveText.enabled = false;
     }
 
     public List<EnemyAIControl> getActiveEnemies()

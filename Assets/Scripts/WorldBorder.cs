@@ -11,6 +11,8 @@ public class WorldBorder : MonoBehaviour
     [Range(1f, 200f)]
     public float damage;
 
+    GameObject canvas;
+
     private float worldSizeHalf;
     private float damageZoneSizeHalf;
 
@@ -30,6 +32,20 @@ public class WorldBorder : MonoBehaviour
 
         boxColliders[3].offset = new Vector2(-worldSizeHalf - damageZoneSizeHalf, 0);
         boxColliders[3].size = new Vector2(damageZoneSize, worldSize);
+    }
+
+    private void Start()
+    {
+        canvas = GameObject.Find("WorldBorder/Canvas");
+        canvas.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            canvas.SetActive(true);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -65,6 +81,9 @@ public class WorldBorder : MonoBehaviour
             {
                 model.OnHullDestroyed();
             }
+        } else if (collision.gameObject.CompareTag("Player"))
+        {
+            canvas.SetActive(false);
         }
     }
 }
