@@ -10,6 +10,7 @@ public abstract class Weapon : MonoBehaviour
     [Range(0, 1)]
     public int weapon;
     [Range(0f, 3f)]
+    public float baseRefireRate;
     public float refireRate;
     [Range(1f, 1000f)]
     public float speed;
@@ -24,6 +25,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected virtual void Start()
     {
+        refireRate = baseRefireRate;
         shipBody = GetComponentInParent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         systems = GetComponentInParent<ShipSystems>();

@@ -6,14 +6,10 @@ public class IncreaseWeaponDamage : ShopItem
 {
     public float damage;
     private LaserDamage weapon;
-    // Start is called before the first frame update
-    void Start()
-    {
-        weapon = GameObject.Find("Player").GetComponent<LaserCannon>().projectileType.GetComponent<LaserDamage>();
-    }
 
     public override void ApplyUpgrade()
     {
+        weapon = GameObject.Find("Player").GetComponent<LaserCannon>().projectileType.GetComponent<LaserDamage>();
         weapon.damage += damage;
     }
 }

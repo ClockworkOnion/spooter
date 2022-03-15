@@ -49,7 +49,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (Shop.GetShop().Choosen)
+        if (Shop.GetShop().Choosen && !GameManager.GetManager().IsGameOver)
         {
             waveText.enabled = false;
         }

@@ -106,6 +106,14 @@ public abstract class DamageModel : MonoBehaviour
             }
         }
     }
+
+    public void OverCharge(float amount)
+    {
+        for (int i = 0; i < shield.Length; i++)
+        {
+            shield[i] = maxShield[i] + amount;
+        }
+    }
     
     public static DamageDirection AngleToDirection(float angle)
     {

@@ -6,8 +6,10 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     [Range(1f, 10f)]
+    public float baseAngleSpeed; // 5.73
+    [Range(1f, 10f)]
+    public float baseDirSpeed; // 5.6
     public float angleSpeed;
-    [Range(1f, 100f)]
     public float dirSpeed;
     public float thrusterCost = 5f;
     public float turningCost = 2f;
@@ -23,6 +25,8 @@ public class Move : MonoBehaviour
 
     void Start()
     {
+        dirSpeed = baseDirSpeed;
+        angleSpeed = baseAngleSpeed;
         body = GetComponent<Rigidbody2D>();
         systems = GetComponent<ShipSystems>();
     }

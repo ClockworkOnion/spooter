@@ -770,6 +770,7 @@ MonoBehaviour:
   maxEnergyPool: 100
   energyPool: 100
   energyRegeneration: 20
+  movementVector: {x: 0, y: 0, z: 0}
 --- !u!82 &1539138991
 AudioSource:
   m_ObjectHideFlags: 0
@@ -903,11 +904,12 @@ MonoBehaviour:
   refireRate: 0.26
   speed: 293
   laserSound: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
-  projectileType: {fileID: 4124514889804667390, guid: a266bd39b81665748aee801f4d4edd8f, type: 3}
+  projectileType: {fileID: 4144978717762172848, guid: dbde6d87ca07ed04781453a281907b11, type: 3}
   firingAngle:
   - -45
   - 45
-  drain: 2.7
+  drain: 0
+  damage: 29
 --- !u!1001 &2308675874724225264
 PrefabInstance:
   m_ObjectHideFlags: 0

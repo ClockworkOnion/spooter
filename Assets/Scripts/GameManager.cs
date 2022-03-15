@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour {
     private Gamestate gamestate;
     private TextMeshProUGUI waveClearText;
 
+    public bool IsGameOver
+    {
+        get => gamestate == Gamestate.gameOver;
+    }
+
     // Start is called before the first frame update
     void Awake()
     {

@@ -8,13 +8,10 @@ public class IncreaseMaxShields : ShopItem
     public float[] shieldIncrease = new float[4];
 
     private DamageModel model;
-    void Start()
-    {
-        model = GameObject.Find("Player").GetComponent<DamageModel>();
-    }
 
     public override void ApplyUpgrade()
     {
+        model = GameObject.Find("Player").GetComponent<DamageModel>();
         for (int i = 0; i < model.maxShield.Length; i++)
         {
             model.maxShield[i] += shieldIncrease[i];
