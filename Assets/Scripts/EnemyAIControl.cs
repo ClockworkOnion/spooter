@@ -10,8 +10,10 @@ using UnityEngine;
 public class EnemyAIControl : MonoBehaviour
 {
     Transform playerPosition;
-    private int APPROACH_DISTANCE_MIN = 25;
-    private int APPROACH_DISTANCE_MAX = 70;
+    public int APPROACH_DISTANCE_MIN = 25;
+    public int APPROACH_DISTANCE_MAX = 70;
+    [Tooltip("For adjusting the size of the targeting reticle")]
+    public float shipSizeMod = 1f;
     private int approachDistanceCurrent = 25;
     private float angleToGoal = 0;
     Rigidbody2D rb;

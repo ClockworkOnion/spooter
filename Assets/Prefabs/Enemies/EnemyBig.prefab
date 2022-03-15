@@ -537,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 9.49
   weapon: 0
+  baseRefireRate: 0
   refireRate: 2.52
   speed: 77
   laserSound: {fileID: 0}
@@ -691,6 +692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a6815a244641747b0f5d718357d736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  APPROACH_DISTANCE_MIN: 10
+  APPROACH_DISTANCE_MAX: 30
   turnSpeed: 15.8
   thrustStrength: 8.81
   TOP_SPEED: 1.4
@@ -837,6 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 5.02
   weapon: 0
+  baseRefireRate: 0
   refireRate: 0.31
   speed: 77
   laserSound: {fileID: 0}
@@ -1009,6 +1013,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 9.49
   weapon: 0
+  baseRefireRate: 0
   refireRate: 0.32
   speed: 205
   laserSound: {fileID: 0}
@@ -1181,6 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 9.49
   weapon: 0
+  baseRefireRate: 0
   refireRate: 2.44
   speed: 74
   laserSound: {fileID: 0}
@@ -1353,6 +1359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 9.49
   weapon: 0
+  baseRefireRate: 0
   refireRate: 0.32
   speed: 205
   laserSound: {fileID: 0}

@@ -656,8 +656,6 @@ GameObject:
   - component: {fileID: 5779088625012894722}
   - component: {fileID: 5779088625012894723}
   - component: {fileID: 5779088625012894735}
-  - component: {fileID: 400376713}
-  - component: {fileID: 400376714}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -768,40 +766,7 @@ MonoBehaviour:
   - {fileID: 973167846574558323, guid: d5f5baf5e05280540a9ecd02a89b4e89, type: 3}
   - {fileID: 1082541281362223205, guid: dae5fbe52b387a04fb6cea0af91b7824, type: 3}
   - {fileID: 1284552116648663359, guid: 8a9e15f0040e3414da14596729cc57ee, type: 3}
---- !u!114 &400376713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779088625012894724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &400376714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5779088625012894724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
+  - {fileID: -7764495912522042108, guid: 687942edd6662c642bdb6f5b1687bce4, type: 3}
 --- !u!1 &5779088625157838623
 GameObject:
   m_ObjectHideFlags: 0

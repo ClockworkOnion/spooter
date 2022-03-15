@@ -56,9 +56,10 @@ public class LevelManager : MonoBehaviour
         if (playerTransform == null) return;
         while (currentEnemyCount < maxEnemyCount && enemyReinforcements > 0 && waveModeOn) // Respawn enemy ships until reinforcements are empty
         {
-            float spawnDistance = 300f;
+            float spawnDistance = Random.Range(250f, 500f);
+            int enemyType = Random.Range(0, Mathf.Min(waveNo, enemyShipPrefabs.Length-1));
             Vector3 spawnPosition = new Vector3(spawnDistance * MinusOrNot(), spawnDistance * MinusOrNot(), 0);
-            EnemyAIControl newEnemy = Instantiate(enemyShipPrefabs[0], playerTransform.position + spawnPosition , Quaternion.identity).GetComponent<EnemyAIControl>();
+            EnemyAIControl newEnemy = Instantiate(enemyShipPrefabs[enemyType], playerTransform.position + spawnPosition , Quaternion.identity).GetComponent<EnemyAIControl>();
             enemiesInScene.Add(newEnemy);
             newEnemy.SetLevelManager(this);
             currentEnemyCount = enemiesInScene.Count;

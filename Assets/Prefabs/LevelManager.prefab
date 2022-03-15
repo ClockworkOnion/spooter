@@ -254,6 +254,19 @@ MonoBehaviour:
   enemyReinforcements: 5
   enemyShipPrefabs:
   - {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
+  - {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
+  - {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
+  - {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
+  - {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
+  - {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
+  - {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
+  - {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
+  - {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
+  - {fileID: 1768084374954124913, guid: ef5b5b9ade2e86449b50425f9e1a8a2a, type: 3}
+  - {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
+  - {fileID: 1768084374954124913, guid: b0dd5c0c6afc1b14f837e461e57c15d5, type: 3}
+  - {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
+  - {fileID: 1768084374954124913, guid: 84c0f8387e01ed84fa09c6f62249420e, type: 3}
   waveModeOn: 1
   waveNo: 1
   timeToNextWave: 0

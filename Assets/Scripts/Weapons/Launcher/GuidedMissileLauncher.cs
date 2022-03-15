@@ -9,6 +9,7 @@ public class GuidedMissileLauncher : DirectionalWeapon
     public float drain;
     private Crosshair crosshair;
     public int volleySize = 4;
+    public float missilePrecision = 1f;
 
     protected override void Start()
     {
@@ -40,6 +41,7 @@ public class GuidedMissileLauncher : DirectionalWeapon
                 lastShot = 0;
                 GameObject shot = Instantiate(projectileType, transform.position + spreadVector,
                     Quaternion.AngleAxis(-angle, Vector3.forward));
+                shot.GetComponent<GuidedMissile>().SetPrecision(missilePrecision);
                 Destroy(shot, lifeTime);
                 if (shot.TryGetComponent(out Rigidbody2D body))
                 {

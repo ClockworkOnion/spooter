@@ -386,8 +386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8db3cca70f42b48968e1bb44967b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldSize: 2844
-  damageZoneSize: 2000
-  damage: 1
+  worldSize: 5008
+  damageZoneSize: 1754
+  damage: 42
   indicator: {fileID: 4343601833891492273, guid: ecb8fa52a684ba74cac93c4a906cca79, type: 3}
   distanceToPlayer: 30

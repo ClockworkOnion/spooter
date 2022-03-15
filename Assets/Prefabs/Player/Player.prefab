@@ -170,8 +170,9 @@ MonoBehaviour:
   laserSound: {fileID: 0}
   projectileType: {fileID: 4124514889804667390, guid: e1e0fce32e4f68a4798da5458c6287cb, type: 3}
   firingAngle: -76
-  drain: 7.8
+  drain: 4
   volleySize: 5
+  missilePrecision: 1
 --- !u!1 &878826728
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,13 +885,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 15.3
   weapon: 1
-  baseRefireRate: 0.5
-  refireRate: 1
+  baseRefireRate: 1.5
+  refireRate: 3
   speed: 131
   laserSound: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
   projectileType: {fileID: 4124514889804667390, guid: 5974a1592c3ff1e48a9897d639c57e39, type: 3}
   firingAngle: 0
-  drain: 15
+  drain: 30.2
 --- !u!114 &174650754
 MonoBehaviour:
   m_ObjectHideFlags: 0

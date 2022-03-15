@@ -504,6 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 6.67
   weapon: 0
+  baseRefireRate: 0
   refireRate: 0.75
   speed: 88.9
   laserSound: {fileID: 8300000, guid: 29058dd73a8d0f243963f9bd5f954ece, type: 3}
@@ -537,6 +538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26a6815a244641747b0f5d718357d736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  APPROACH_DISTANCE_MIN: 25
+  APPROACH_DISTANCE_MAX: 70
+  shipSizeMod: 1
   turnSpeed: 11
   thrustStrength: 3
   TOP_SPEED: 2
@@ -558,6 +562,7 @@ MonoBehaviour:
   maxEnergyPool: 100
   energyPool: 100
   energyRegeneration: 6
+  movementVector: {x: 0, y: 0, z: 0}
 --- !u!114 &-6572093832422415002
 MonoBehaviour:
   m_ObjectHideFlags: 0

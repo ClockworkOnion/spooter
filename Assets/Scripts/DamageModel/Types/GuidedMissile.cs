@@ -6,6 +6,7 @@ public class GuidedMissile : DirectionalDamage
 {
     private bool leftShip = false;
     public float damage = 6f;
+    private float precision = 1f;
     private float activeTime = 0f;
     public float LIFESPAN = 5f;
     public float turnSpeed = 800f;
@@ -28,7 +29,6 @@ public class GuidedMissile : DirectionalDamage
         LIFESPAN += Random.Range(-1f, 1f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         activeTime += Time.deltaTime;
@@ -102,7 +102,7 @@ public class GuidedMissile : DirectionalDamage
 
     private void reselectGoal()
     {
-        movementGoal = PositionsAroundTarget(Random.Range(10f, 20f) * (LIFESPAN-activeTime-1))[Random.Range(0, 4)];
+        movementGoal = PositionsAroundTarget(Random.Range(10f, 20f) * precision * (LIFESPAN - activeTime -1) )[Random.Range(0, 4)];
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -133,6 +133,16 @@ public class GuidedMissile : DirectionalDamage
     {
         yield return new WaitForSeconds(delay);
         Destroy(gameObject);
+    }
+
+    public void SetPrecision(float p)
+    {
+        if (0 <= p && p <= 1)
+        {
+            precision = p;
+            return;
+        }
+        Debug.Log("Guided Missile Precision must be between 0 (super accurate) and 1 (default)!");
     }
 
 }

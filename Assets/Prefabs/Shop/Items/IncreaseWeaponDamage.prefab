@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texture: {fileID: 21300000, guid: 4afae80ff0d9f7e4caef2f35641a0946, type: 3}
   text: Increase Laser Cannon Damage
-  damage: 100
+  damage: 10
