@@ -45,5 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   texture: {fileID: 21300000, guid: 4afae80ff0d9f7e4caef2f35641a0946, type: 3}
   text: Increase Fire Rate
-  increasePercentage: 100
+  increasePercentage: 50
   weapon: {fileID: 174650753, guid: 30dc876dde5cf724395e49d06f12fc7d, type: 3}

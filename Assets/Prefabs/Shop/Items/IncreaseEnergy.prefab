@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2548843331393903872
+--- !u!1 &8263017538800094045
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6678708796147751051}
-  - component: {fileID: 1284552116648663359}
+  - component: {fileID: 597613080625196095}
+  - component: {fileID: 2621184216262208666}
   m_Layer: 0
-  m_Name: OverChargeShields
+  m_Name: IncreaseEnergy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6678708796147751051
+--- !u!4 &597613080625196095
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2548843331393903872}
+  m_GameObject: {fileID: 8263017538800094045}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 710.7502, y: 156.17781, z: -1243.3591}
+  m_LocalPosition: {x: 243.16286, y: -350.75986, z: -31.5276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1284552116648663359
+--- !u!114 &2621184216262208666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2548843331393903872}
+  m_GameObject: {fileID: 8263017538800094045}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b10ad3f8d35e16548965fa13d4318835, type: 3}
+  m_Script: {fileID: 11500000, guid: bf06a08b735123b4cb039ccc5454c42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texture: {fileID: 21300000, guid: 2595576778cfb3a4da5cf8b5bd14b5c5, type: 3}
-  text: Overcharge the Shields
-  amount: 100
+  texture: {fileID: 21300000, guid: 0421ffdbaac2ca44ca0dfb828b0ad0c7, type: 3}
+  text: Increase Max Energy
+  amount: 30
