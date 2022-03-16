@@ -14,6 +14,7 @@ public class GUIControl : MonoBehaviour
     private ShipSystems plrShipSystems;
     private LaserCannon laser;
     private GuidedMissileLauncher guidedMissiles;
+    private MineDropper mine;
     private MissleLauncher missiles;
     private ShieldRingDisplay[] shieldsDisplay = new ShieldRingDisplay[4];
     private float[] currentShields = new float[4]; // vorne, rechts, hinten, links
@@ -37,6 +38,7 @@ public class GUIControl : MonoBehaviour
         laser = player.GetComponent<LaserCannon>();
         guidedMissiles = player.transform.Find("Tower").GetComponent<GuidedMissileLauncher>();
         missiles = player.GetComponent<MissleLauncher>();
+        mine = player.transform.Find("MineDropper").GetComponent<MineDropper>();
 
         shieldsDisplay[0] = transform.Find("ShieldForward").GetComponent<ShieldRingDisplay>();
         shieldsDisplay[1] = transform.Find("ShieldRight").GetComponent<ShieldRingDisplay>();
@@ -57,7 +59,9 @@ public class GUIControl : MonoBehaviour
         if (plrShipSystems == null) return;
 
         // Speed Display
+        
         Vector2 vel = plrShipSystems.GetComponent<Rigidbody2D>().velocity;
+        /*
         string energy = plrShipSystems.Energy.ToString();
         string maxnrg_string = plrShipSystems.maxEnergyPool.ToString();
         string hull = dmgModel.Hull.ToString();
@@ -67,8 +71,11 @@ public class GUIControl : MonoBehaviour
         string laserDmg = laser.damage.ToString();
         string missileRate = missiles.refireRate.ToString();
         string missilePrecision = guidedMissiles.missilePrecision.ToString();
+        */ // das musst du nicht machen lars
            
-        speedText.SetText($"Speed:\n{vel.ToString()}\nTotal:\n {vel.magnitude}\nEnergy: [{energy}/{maxnrg_string}]\nHull:[{hull}/{maxHull}]\nMaxShield:{maxShield}\nLaser Fire Rate:{laserRate}\nLaser Power:{laserDmg}\nMissile Fire Rate:{missileRate}\nMissile Precision:{missilePrecision}");
+        speedText.SetText($"Speed:\n{vel}\nTotal:\n {vel.magnitude}\nEnergy: [{plrShipSystems.Energy}/{plrShipSystems.maxEnergyPool}]\nHull:[{dmgModel.Hull}/{dmgModel.maxHull}]\n" +
+            $"MaxShield:{dmgModel.maxShield}\nLaser Fire Rate:{laser.refireRate}\nLaser Power:{laser.damage}\nMissile Fire Rate:{missiles.refireRate}\nMissile Precision:{guidedMissiles.missilePrecision}" +
+            $"\nMine Fire Rate:{mine.refireRate}");
 
 
         // Energy pool

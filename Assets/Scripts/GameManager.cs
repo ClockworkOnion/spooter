@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour {
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         int destroyed = GameObject.Find("LevelManager").GetComponent<LevelManager>().totalShipsDestroyed;
         waveClearText.enabled = true;
-        waveClearText.SetText($"Game Over!\nYour score was : {score}\nPress R to restart!");
+        waveClearText.SetText($"Game Over!\nYour score was : {score}\nPress R to restart!\n Press Esc to Exit");
         gamestate = Gamestate.gameOver;
         ScoreBoard.GetScoreBoard().OnGameFinished(score);
         Debug.Log("Game over!");
@@ -67,13 +67,16 @@ public class GameManager : MonoBehaviour {
     {
         if (gamestate == Gamestate.gameOver)
         {
-            if (Input.GetKey("r") && ScoreBoard.GetScoreBoard().Restartable)
+            if (Input.GetKey(KeyCode.R) && ScoreBoard.GetScoreBoard().Restartable)
             {
                 ScoreBoard.GetScoreBoard().OnGameRestart();
                 score = 0;
                 waveClearText.enabled = false;
                 gamestate = Gamestate.playing;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            if (Input.GetKey(KeyCode.Escape)){
+                SceneManager.LoadScene(1);
             }
         }
         
