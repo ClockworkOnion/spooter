@@ -51,7 +51,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 5a6aa276522e5864e9014de281df4ef4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,8 +102,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.19811215, g: 0.8018868, b: 0.19290671, a: 1}
-      key1: {r: 0.33268064, g: 0.7924528, b: 0.33659062, a: 1}
+      key0: {r: 0.19215684, g: 0.8, b: 0.76280326, a: 1}
+      key1: {r: 0.5707102, g: 0.8962264, b: 0.82609934, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -197,7 +197,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 606844675bd8e1e4493f2bbda989b481, type: 2}
+  - {fileID: 2100000, guid: 5a6aa276522e5864e9014de281df4ef4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 58
-  actDamage: 0
 --- !u!82 &2027429682643141011
 AudioSource:
   m_ObjectHideFlags: 0
