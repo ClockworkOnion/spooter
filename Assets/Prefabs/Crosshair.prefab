@@ -177,7 +177,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 1f71458d9fc60f3479b36e1264b6aab4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 606844675bd8e1e4493f2bbda989b481, type: 2}
+      objectReference: {fileID: 2100000, guid: 0773486e91629db429ab147ae5d80112, type: 2}
     - target: {fileID: 919132149155446097, guid: 1f71458d9fc60f3479b36e1264b6aab4, type: 3}
       propertyPath: m_Name
       value: crosshair1
