@@ -598,6 +598,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 977754004, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 977754004, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 68.099976
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664326429258714913, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -79.400024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664326429258714913, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 19.03003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670192412315404441, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 8.400024
+      objectReference: {fileID: 0}
     - target: {fileID: 5670192413724087027, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
       propertyPath: m_Name
       value: HUDCanvas
@@ -685,6 +705,14 @@ PrefabInstance:
     - target: {fileID: 5670192413724087031, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670192413737532961, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -123.66998
+      objectReference: {fileID: 0}
+    - target: {fileID: 5670192413737532961, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 19.03003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 772b0d84071fd3e42aeb2ba3337dccde, type: 3}
@@ -1154,6 +1182,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5779088625012894720, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779088625012894722, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779088625012894722, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
+      propertyPath: m_MatchWidthOrHeight
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5779088625012894724, guid: 78cbf41638d35f3449505e64e2449378, type: 3}

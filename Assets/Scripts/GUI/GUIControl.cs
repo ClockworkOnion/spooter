@@ -23,6 +23,7 @@ public class GUIControl : MonoBehaviour
     private float maxEnergy = 100;
     private float currentEnergy = 50;
     private ShieldRingDisplay energyRings;
+    private ShieldRingDisplay hullRings;
     private TextMeshProUGUI infoText, speedText;
     private RectTransform infoRect;
     private Vector3 infoIdlePos;
@@ -45,6 +46,7 @@ public class GUIControl : MonoBehaviour
         shieldsDisplay[2] = transform.Find("ShieldBackward").GetComponent<ShieldRingDisplay>();
         shieldsDisplay[3] = transform.Find("ShieldLeft").GetComponent<ShieldRingDisplay>();
         energyRings = transform.Find("EngineRings").GetComponent<ShieldRingDisplay>();
+        hullRings = transform.Find("HullRings").GetComponent<ShieldRingDisplay>();
         infoText = transform.Find("InfoText").GetComponent<TextMeshProUGUI>();
         speedText = transform.Find("SpeedText").GetComponent<TextMeshProUGUI>();
         infoRect = transform.Find("InfoText").GetComponent<RectTransform>();
@@ -82,6 +84,9 @@ public class GUIControl : MonoBehaviour
         maxEnergy = plrShipSystems.maxEnergyPool;
         currentEnergy = plrShipSystems.Energy;
         energyRings.SetPercentages(currentEnergy, maxEnergy);
+
+        // Hull display
+        hullRings.SetPercentages(dmgModel.Hull, dmgModel.maxHull);
 
         // Shields
         dmgModel.Shields(currentShields);
