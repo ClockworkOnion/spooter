@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Ramon_MainMenu.unity
     guid: e7a3b8d5d1ef321408faf18ab29bcabb
   - enabled: 1
-    path: Assets/Scenes/PrefabScene.unity
-    guid: 77524a61f2aa6b243ad474a9093a350e
+    path: Assets/Scenes/Lars.unity
+    guid: 81be2dcfce01be5459692c933b21baf2
   - enabled: 1
     path: Assets/Scenes/Ramon_EndingAndCredits.unity
     guid: 3952989f0b6d89f44b6689540c0ff58c
