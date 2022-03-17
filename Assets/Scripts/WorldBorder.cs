@@ -35,6 +35,13 @@ public class WorldBorder : MonoBehaviour
 
         boxColliders[3].offset = new Vector2(-worldSizeHalf - damageZoneSizeHalf, 0);
         boxColliders[3].size = new Vector2(damageZoneSize, worldSize);
+
+        LineRenderer renderer = GetComponent<LineRenderer>();
+        renderer.positionCount = 4;
+        renderer.SetPosition(0, new Vector3(-worldSizeHalf, -worldSizeHalf, 0));
+        renderer.SetPosition(1, new Vector3(-worldSizeHalf, worldSizeHalf, 0));
+        renderer.SetPosition(2, new Vector3(worldSizeHalf, worldSizeHalf, 0));
+        renderer.SetPosition(3, new Vector3(worldSizeHalf, -worldSizeHalf, 0));
     }
 
     private void Start()
