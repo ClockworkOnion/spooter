@@ -542,7 +542,7 @@ MonoBehaviour:
   APPROACH_DISTANCE_MAX: 70
   shipSizeMod: 1
   turnSpeed: 11
-  thrustStrength: 3
+  thrustStrength: 12
   TOP_SPEED: 2
   type: 0
   currentSpeed: 0
