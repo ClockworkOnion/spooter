@@ -55,6 +55,11 @@ public class GuidedMissileLauncher : DirectionalWeapon
             }
         }
     }
+
+    protected override bool Refire()
+    {
+        return (lastShot += Time.deltaTime) > refireRate && Input.GetKeyDown("q");
+    }
     
     IEnumerator DelayedVolley(float delay, Transform target)
     {
