@@ -617,7 +617,7 @@ MonoBehaviour:
   - 0
   hull: 0
   explosion: {fileID: 2377161859457127625, guid: 68622fc70c8f92e4190b549186fac07d, type: 3}
-  gainedScore: 0
+  gainedScore: 17
 --- !u!61 &1768084374954124912
 BoxCollider2D:
   m_ObjectHideFlags: 0
