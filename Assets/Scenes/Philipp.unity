@@ -1806,10 +1806,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
-    - target: {fileID: 5779088625012894735, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
-      propertyPath: possibleItems.Array.data[8]
-      value: 
-      objectReference: {fileID: 2621184216262208666, guid: e752c833696060e4aae3524ef187ff71, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78cbf41638d35f3449505e64e2449378, type: 3}
 --- !u!1001 &6671425571442007699
