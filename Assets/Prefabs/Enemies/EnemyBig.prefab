@@ -619,7 +619,7 @@ MonoBehaviour:
   - 0
   hull: 0
   explosion: {fileID: 2377161859457127625, guid: 68622fc70c8f92e4190b549186fac07d, type: 3}
-  gainedScore: 0
+  gainedScore: 23
 --- !u!61 &1768084374954124912
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -694,6 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   APPROACH_DISTANCE_MIN: 10
   APPROACH_DISTANCE_MAX: 30
+  shipSizeMod: 1
   turnSpeed: 15.8
   thrustStrength: 8.81
   TOP_SPEED: 1.4

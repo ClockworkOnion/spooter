@@ -10,6 +10,7 @@ public class IncreaseFireRate : ShopItem
 
     public override void ApplyUpgrade()
     {
-        weapon.refireRate = 1 / ((1 / weapon.refireRate) * (1 + increasePercentage));
+        weapon = GameObject.Find("Player").GetComponent<MissleLauncher>();
+        weapon.refireRate = 1 / ((1 / weapon.refireRate) * (1 + (increasePercentage/100)));
     }
 }
