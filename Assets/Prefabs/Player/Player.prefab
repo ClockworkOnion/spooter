@@ -235,8 +235,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.179
+  m_Pitch: 1.16
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -342,6 +342,7 @@ MonoBehaviour:
   drain: 4
   volleySize: 5
   missilePrecision: 1
+  rocketSound: {fileID: 8300000, guid: 3b7e0fd98d3d1eb41b6a8b4d83036dc7, type: 3}
 --- !u!1 &878826728
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +888,7 @@ MonoBehaviour:
   - 205
   - 205
   rechargeDrain: 0
-  rechargeSpeed: 0
+  rechargeSpeed: 3
   shield:
   - 0
   - 0

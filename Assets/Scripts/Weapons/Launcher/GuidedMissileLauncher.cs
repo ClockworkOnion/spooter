@@ -10,11 +10,14 @@ public class GuidedMissileLauncher : DirectionalWeapon
     private Crosshair crosshair;
     public int volleySize = 4;
     public float missilePrecision = 1f;
+    private AudioSource audio;
+    public AudioClip rocketSound;
 
     protected override void Start()
     {
         base.Start();
         crosshair = GameObject.Find("Crosshair").GetComponent<Crosshair>();
+        audio = GetComponent<AudioSource>();
     }
     protected override bool Powered()
     {
@@ -38,6 +41,7 @@ public class GuidedMissileLauncher : DirectionalWeapon
             Vector3 spreadVector = new Vector3(spread, spread, spread);
             float angle = FiringAngle() + Random.Range(-20, 20);
             if (CanFire(angle) && Powered()) {
+                audio.PlayOneShot(rocketSound);
                 lastShot = 0;
                 GameObject shot = Instantiate(projectileType, transform.position + spreadVector,
                     Quaternion.AngleAxis(-angle, Vector3.forward));
