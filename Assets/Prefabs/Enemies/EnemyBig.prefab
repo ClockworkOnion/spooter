@@ -694,9 +694,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   APPROACH_DISTANCE_MIN: 10
   APPROACH_DISTANCE_MAX: 30
-  shipSizeMod: 1
+  shipSizeMod: 2.5
   turnSpeed: 15.8
-  thrustStrength: 8.81
+  thrustStrength: 20
   TOP_SPEED: 1.4
   type: 0
   currentSpeed: 0

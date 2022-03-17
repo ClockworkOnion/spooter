@@ -97,7 +97,7 @@ public class LevelManager : MonoBehaviour
         maxEnemyCount = Mathf.Min((waveNo + MinusOrNot()), enemyReinforcements);
         waveText.enabled = true;
         waveText.text = $"Wave {waveNo} Cleared! \n  Shields and Energy restored. \n\n  Now try the next wave:\n{maxEnemyCount} at once, {enemyReinforcements} in total.";
-        playerDmgMdl.RechargeShields(1, 100);
+        playerDmgMdl.RechargeShields(1, 400);
     }
 
     public List<EnemyAIControl> getActiveEnemies()
