@@ -1,19 +1,4 @@
-# spooter
- UGS2022 Project Space Shooter
+# Spooter
+ UGS2022 Game Jam Project "Space Shooter"
 
-##TODOs
-
-### Gegnerwellen verbessern
-Spätere Wellen haben stärkere Gegner, LevelManager wählt zufällig aus
-
-### Online Scoreboard (?)
-Evtl über Google Sheets zu implementieren?
-
-### WebGL -> itch.io
-Damit es einfach spielbar ist ohne DL
-
-### Minen
-Minen die im All hängen und darauf warten, dass ein Gegner rein fliegt
-
-### Endesequenz
-Freigeschaltet nach Welle x und dann anschaubar im Hauptmenü
+Play here: https://clockwork-onion.itch.io/ugs2022-spooter
